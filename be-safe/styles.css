@@ -7,7 +7,7 @@
 
 body {
   font-size: 18px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -22,6 +22,7 @@ body {
 
 h1 {
   font-size: 2.4em;
+  color: #159957;
 }
 
 h2 {
