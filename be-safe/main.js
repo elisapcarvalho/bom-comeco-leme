@@ -30,14 +30,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const incorrectAnswer = document.getElementById("incorrectAnswer");
 
   let matches = 0;
-  commandsContainer.style.visibility = "hidden";
+  commandsContainer.style.display = "none";
 
   correctAnswer.addEventListener("click", () => checkIfCardsMatch(true));
 
   incorrectAnswer.addEventListener("click", () => checkIfCardsMatch(false));
 
   function showCommands() {
-    commandsContainer.style.visibility = "visible";
+    commandsContainer.style.display = "flex";
     grid.classList.add("disabledDiv");
   };
 
@@ -79,7 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const checkIfCardsMatch = (isCorrect) => {
-    commandsContainer.style.visibility = "hidden";
+    commandsContainer.style.display = "none";
     grid.classList.remove("disabledDiv");
 
     const card0 = document.querySelector(`.card-${cardsChosenId[0]}`);
