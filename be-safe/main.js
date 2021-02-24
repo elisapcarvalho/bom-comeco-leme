@@ -60,11 +60,11 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("restart").style.display = "block";
 
       document.getElementById("result").textContent =
-        "Good job! You found all pairs";
+        "GOOD JOB! YOU FOUND ALL PAIRS!";
     } else {
       document.getElementById(
         "result"
-      ).textContent = `You found ${matches} pairs of ${availableCards.length}`;
+      ).textContent = `YOU FOUND ${matches} PAIRS OF ${availableCards.length}`;
     }
   };
 
