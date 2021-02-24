@@ -9,7 +9,13 @@
   <body>
     <div class="container">
       <h1 id="result"></h1>
-      <div class="grid"></div>
+      <div class="gameboard">
+        <div class="grid"></div>
+        <div class="commands">
+          <img src="images/heart.svg" alt="You found!!!" id="correctAnswer"/>
+          <img src="images/close.svg" alt="Try again!!!" id="incorrectAnswer"/>
+        </div>
+      </div>
       <button type="button" id="restart">Start a new game.</button>
     </div>
     <script src="main.js"></script>

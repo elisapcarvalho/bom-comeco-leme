@@ -20,9 +20,25 @@ h1 {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  height: 25em;
+  height: 13em;
   width: 30em;
   margin: 1em;
+}
+
+.gameboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.commands {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 3em;
+}
+
+.commands img {
+  height: 6em;
+  cursor: pointer;
 }
 
 img[class^="card"] {
@@ -34,6 +50,7 @@ img[class^="card"] {
   max-width: 7em;
   padding: 10px;
   box-sizing: border-box;
+  cursor: pointer;
 }
 
 button {
@@ -44,4 +61,9 @@ button {
   border-radius: 8px;
   margin-top: 1em;
   font-size: 1.8em;
+}
+
+.disabledDiv {
+  pointer-events: none;
+  opacity: 0.4;
 }

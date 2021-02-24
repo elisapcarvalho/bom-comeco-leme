@@ -14,11 +14,32 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
+  const sounds = {
+    'our-school': new Audio('sounds/our-school.mp3'),
+    'stay-home': new Audio('sounds/stay-home.mp3'),
+    'wash-your-hands': new Audio('sounds/wash-your-hands.mp3'),
+    'wear-mask': new Audio('sounds/wear-mask.mp3'),
+  }
   const cards = [];
 
   const grid = document.querySelector(".grid");
+  const commandsContainer = document.querySelector(".commands");
+
   const cardsChosenId = [];
+  const correctAnswer = document.getElementById("correctAnswer");
+  const incorrectAnswer = document.getElementById("incorrectAnswer");
+
   let matches = 0;
+  commandsContainer.style.visibility = "hidden";
+
+  correctAnswer.addEventListener("click", () => checkIfCardsMatch(true));
+
+  incorrectAnswer.addEventListener("click", () => checkIfCardsMatch(false));
+
+  function showCommands() {
+    commandsContainer.style.visibility = "visible";
+    grid.classList.add("disabledDiv");
+  };
 
   function flipCard() {
     this.removeEventListener("click", flipCard);
@@ -27,10 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsChosenId.push(cardId);
     this.setAttribute("alt", cards[cardId].name);
     this.setAttribute("src", `images/${cards[cardId].name}.png`);
-    const audio = new Audio(`sounds/${cards[cardId].name}.mp3`);
-    audio.play();
+    sounds[cards[cardId].name].play();
     if (cardsChosenId.length === 2) {
-      setTimeout(checkIfCardsMatch, 3500);
+      setTimeout(showCommands(), 3500);
     }
   }
 
@@ -58,10 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
     card.addEventListener("click", flipCard);
   };
 
-  const checkIfCardsMatch = () => {
+  const checkIfCardsMatch = (isCorrect) => {
+    commandsContainer.style.visibility = "hidden";
+    grid.classList.remove("disabledDiv");
+
     const card0 = document.querySelector(`.card-${cardsChosenId[0]}`);
     const card1 = document.querySelector(`.card-${cardsChosenId[1]}`);
-    if (card0.getAttribute("alt") === card1.getAttribute("alt")) {
+    if (isCorrect) {
       setCardOk(card0);
       setCardOk(card1);
       updateMatches(++matches);
