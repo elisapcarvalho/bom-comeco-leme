@@ -19,22 +19,14 @@ document.addEventListener("DOMContentLoaded", () => {
     'stay-home': new Audio('sounds/stay-home.mp3'),
     'wash-your-hands': new Audio('sounds/wash-your-hands.mp3'),
     'wear-mask': new Audio('sounds/wear-mask.mp3'),
-  }
+  };
+
   const cards = [];
+  const cardsChosenId = [];
+  let matches = 0;
 
   const grid = document.querySelector(".grid");
   const commandsContainer = document.querySelector(".commands");
-
-  const cardsChosenId = [];
-  const correctAnswer = document.getElementById("correctAnswer");
-  const incorrectAnswer = document.getElementById("incorrectAnswer");
-
-  let matches = 0;
-  commandsContainer.style.display = "none";
-
-  correctAnswer.addEventListener("click", () => checkIfCardsMatch(true));
-
-  incorrectAnswer.addEventListener("click", () => checkIfCardsMatch(false));
 
   function showCommands() {
     commandsContainer.style.display = "flex";
@@ -59,8 +51,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (matches === availableCards.length) {
       document.getElementById("restart").style.display = "block";
 
-      document.getElementById("result").textContent =
-        "GOOD JOB! YOU FOUND ALL PAIRS!";
+      document.getElementById("result").textContent = "GOOD JOB! YOU FOUND ALL PAIRS!";
+      document.getElementById("result").classList.add("good-job");
     } else {
       document.getElementById(
         "result"
@@ -123,9 +115,14 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < cards.length; i++) {
       grid.appendChild(createCard(i));
     }
+    commandsContainer.style.display = "none";
+    document.getElementById("result").classList.remove("good-job");
     document.getElementById("restart").style.display = "none";
   };
 
-  createBoard();
+  document.getElementById("correctAnswer").addEventListener("click", () => checkIfCardsMatch(true));
+  document.getElementById("incorrectAnswer").addEventListener("click", () => checkIfCardsMatch(false));
   document.getElementById("restart").addEventListener("click", createBoard);
+
+  createBoard();
 });

@@ -75,6 +75,12 @@ button {
   opacity: 0.4;
 }
 
+.good-job {
+  font-size: 1.8em;
+  color: #6060b1;
+  font-weight: 800;
+}
+
 .header {
   position: fixed;
   left: 0;
