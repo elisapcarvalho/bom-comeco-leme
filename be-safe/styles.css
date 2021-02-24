@@ -24,6 +24,11 @@ h1 {
   font-size: 2.4em;
 }
 
+h2 {
+  color: #5e5e5e;
+  margin: 0.5em 0;
+}
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -79,6 +84,7 @@ button {
 
 .footer p {
   margin: 1em;
+  font-size: 1.2em;
 }
 
 @media (max-width: 640px)
