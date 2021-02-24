@@ -69,10 +69,26 @@ button {
   opacity: 0.4;
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: right;
+}
+
+.footer p {
+  margin: 1em;
+}
+
 @media (max-width: 640px)
 {
   body {
     font-size: 12px;
+  }
+
+  .footer p {
+    margin: 1.5em;
   }
 }
 
@@ -80,5 +96,9 @@ button {
 {
   body {
     font-size: 10px;
+  }
+
+  .footer p {
+    margin: 1.8em;
   }
 }
