@@ -1,7 +1,13 @@
-html,
-body {
+* {
   margin: 0;
   padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .container {
@@ -14,14 +20,14 @@ body {
 }
 
 h1 {
-  font-size: 3em;
+  font-size: 2.4em;
 }
 
 .grid {
   display: flex;
   flex-wrap: wrap;
-  height: 13em;
-  width: 30em;
+  width: 24em;
+  max-width: 30em;
   margin: 1em;
 }
 
@@ -42,12 +48,7 @@ h1 {
 }
 
 img[class^="card"] {
-  height: 7em;
-  min-height: 7em;
-  max-height: 7em;
-  width: 7em;
-  min-width: 7em;
-  max-width: 7em;
+  max-width: 6em;
   padding: 10px;
   box-sizing: border-box;
   cursor: pointer;
@@ -66,4 +67,11 @@ button {
 .disabledDiv {
   pointer-events: none;
   opacity: 0.4;
+}
+
+@media (max-width: 600px)
+{
+  body {
+    font-size: 12px;
+  }
 }
