@@ -6,7 +6,7 @@
 }
 
 body {
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
@@ -27,8 +27,7 @@ h1 {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 24em;
-  max-width: 30em;
+  width: 32em;
   margin: 1em;
 }
 
@@ -49,7 +48,7 @@ h1 {
 }
 
 img[class^="card"] {
-  max-width: 6em;
+  max-width: 8em;
   padding: 10px;
   box-sizing: border-box;
   cursor: pointer;
@@ -70,7 +69,7 @@ button {
   opacity: 0.4;
 }
 
-@media (max-width: 600px)
+@media (max-width: 640px)
 {
   body {
     font-size: 12px;
