@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 18px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  width: 100%;
+}
+
+.letters-container {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.letter {
+  border-bottom: 1px solid #666;
+  font-size: 2em;
+  margin-left: 0.5em;
+  min-width: 1em;
+}
+
+.alphabet-button {
+  background: transparent;
+  border-radius: 0.5em;
+  cursor: pointer;
+  font-size: 1.5em;
+  margin-right: 0.5em;
+  margin-top: 0.8em;
+  min-width: 2em;
+  padding: 0.3em;
+}
+
+.guess-used {
+  cursor: not-allowed;
+}
+
+.correct-guess {
+  background: #359c35;
+  color: white;
+}
+
+.incorrect-guess {
+  background: #6c6c6c;
+  color: white;
+}
+
+.result-text {
+    margin-top: 1em;
+    line-height: 1.5em;
+}
+
+.restart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.restart-button {
+  background-color: blue;
+  color: white;
+  padding: 1em 2em;
+  border: 0;
+  border-radius: 8px;
+  margin-top: 1em;
+  font-size: 1.2em;
+}
