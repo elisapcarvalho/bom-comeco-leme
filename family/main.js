@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     aunt: new Audio("sounds/aunt.mp3"),
     brother: new Audio("sounds/brother.mp3"),
     cousin: new Audio("sounds/cousin.mp3"),
-    father: new Audio("sounds/book.father.mp3"),
+    father: new Audio("sounds/father.mp3"),
     grandfather: new Audio("sounds/grandfather.mp3"),
     grandmother: new Audio("sounds/grandmother.mp3"),
     mother: new Audio("sounds/mother.mp3"),
