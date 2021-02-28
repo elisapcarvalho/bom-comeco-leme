@@ -11,6 +11,16 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+button {
+  background-color: blue;
+  color: white;
+  padding: 1em 2em;
+  border: 0;
+  border-radius: 8px;
+  margin-top: 1em;
+  font-size: 1.5em;
+}
+
 h1 {
   font-size: 1.8em;
   color: #159957;
@@ -22,26 +32,14 @@ h2 {
   margin: 1em 0;
 }
 
-.container {
-  padding-right: 5px;
-  padding-left: 5px;
+img[class^="card"] {
+  max-width: 8em;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-.row {
-  margin-left: -5px;
-  margin-right: -5px;
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  width: 32em;
-  margin: 1em;
-}
-
-.gameboard {
-  display: flex;
-  flex-direction: column;
+.card-found {
+  cursor: not-allowed;
 }
 
 .commands {
@@ -54,29 +52,22 @@ h2 {
   cursor: pointer;
 }
 
-img[class^="card"] {
-  max-width: 8em;
-  box-sizing: border-box;
-  cursor: pointer;
-}
-
-button {
-  background-color: blue;
-  color: white;
-  padding: 1em 2em;
-  border: 0;
-  border-radius: 8px;
-  margin-top: 1em;
-  font-size: 1.5em;
-}
-
-.card-found {
-  cursor: not-allowed;
+.container {
+  padding-right: 5px;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .disabledDiv {
   pointer-events: none;
   opacity: 0.4;
+}
+
+.gameboard {
+  display: flex;
+  flex-direction: column;
 }
 
 .good-job {
@@ -85,10 +76,11 @@ button {
   font-weight: 800;
 }
 
-.restart-container {
+.grid {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
+  width: 32em;
+  margin: 1em;
 }
 
 .header {
@@ -98,32 +90,7 @@ button {
   justify-content: space-between;
   margin-top: 2em;
   margin-bottom: 0.5em;
-}
-
-@media (min-width: 577px) {
-  body {
-    font-size: 18px;
-  }
-
-  h1 {
-    font-size: 2em;
-  }
-
-  h2 {
-    font-size: 1.5em;
-  }
-
-  .header {
-    flex-direction: row;
-  }
-
-  .grid {
-    width: 56em;
-  }
-
-  img[class^="card"] {
-    max-width: 8em;
-  }
+  width: 100%;
 }
 
 .modal {
@@ -151,3 +118,34 @@ button {
   width: 100%;
   max-width: 27em;
 }
+
+.restart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+  width: 100%;
+}
+
+@media (min-width: 577px) {
+  body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .header {
+    flex-direction: row;
+  }
+}
+

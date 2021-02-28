@@ -5,12 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
       text: "SCHOOLBAG",
     },
     {
-      name: "pen",      
+      name: "pen",
       text: "PEN",
     },
     {
-      name: "eraser",      
-      text: "ERASER",      
+      name: "eraser",
+      text: "ERASER",
     },
     {
       name: "book",
@@ -31,15 +31,17 @@ document.addEventListener("DOMContentLoaded", () => {
   ];
 
   const sounds = {
-    'schoolbag': new Audio('sounds/schoolbag.mp3'),
-    'pen': new Audio('sounds/pen.mp3'),
-    'eraser': new Audio('sounds/eraser.mp3'),
-    'book': new Audio('sounds/book.mp3'),
-    'pencil': new Audio('sounds/pencil.mp3'),
-    'pencil-case': new Audio('sounds/pencil-case.mp3'),
-    'notebook': new Audio('sounds/notebook.mp3'),
+    schoolbag: new Audio("sounds/schoolbag.mp3"),
+    pen: new Audio("sounds/pen.mp3"),
+    eraser: new Audio("sounds/eraser.mp3"),
+    book: new Audio("sounds/book.mp3"),
+    pencil: new Audio("sounds/pencil.mp3"),
+    "pencil-case": new Audio("sounds/pencil-case.mp3"),
+    notebook: new Audio("sounds/notebook.mp3"),
+    error: new Audio("sounds/error.mp3"),
   };
-  
+
+  const maxCardsToShow = 4;
   const cards = [];
   const cardsChosenId = [];
   let matches = 0;
@@ -47,11 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const grid = document.querySelector(".grid");
   const commandsContainer = document.querySelector(".commands");
   const modal = document.getElementById("modal");
+  const resultText = document.getElementById("result");
 
   function showCommands() {
     commandsContainer.style.display = "flex";
     grid.classList.add("disabledDiv");
-  };
+  }
 
   function flipCard() {
     this.removeEventListener("click", flipCard);
@@ -59,7 +62,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const cardId = this.getAttribute("data-id");
     cardsChosenId.push(cardId);
     this.setAttribute("alt", cards[cardId].name);
-    this.setAttribute("src", cards[cardId].showText ? `images/${cards[cardId].name}-text.png` : `images/${cards[cardId].name}.png`);
+    this.setAttribute(
+      "src",
+      cards[cardId].showText
+        ? `images/${cards[cardId].name}-text.png`
+        : `images/${cards[cardId].name}.png`
+    );
     sounds[cards[cardId].name].play();
     if (cardsChosenId.length === 2) {
       setTimeout(showCommands(), 3500);
@@ -74,13 +82,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updateMatches = (qty) => {
     matches = qty;
-    if (matches === availableCards.length) {
-
+    if (matches === maxCardsToShow) {
       modal.style.display = "flex";
     } else {
-      document.getElementById(
-        "result"
-      ).textContent = `YOU FOUND ${matches} PAIRS OF ${availableCards.length}`;
+      resultText.textContent = `YOU FOUND ${matches} PAIRS OF ${maxCardsToShow}`;
     }
   };
 
@@ -90,11 +95,18 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const checkIfCardsMatch = (isCorrect) => {
+    const card0 = document.querySelector(`.card-${cardsChosenId[0]}`);
+    const card1 = document.querySelector(`.card-${cardsChosenId[1]}`);
+
+    if (isCorrect && card0.alt !== card1.alt) {
+      sounds["error"].play();
+      resultText.textContent = "CHECK YOUR ANSWER!!!";
+      return;
+    }
+
     commandsContainer.style.display = "none";
     grid.classList.remove("disabledDiv");
 
-    const card0 = document.querySelector(`.card-${cardsChosenId[0]}`);
-    const card1 = document.querySelector(`.card-${cardsChosenId[1]}`);
     if (isCorrect) {
       setCardOk(card0);
       setCardOk(card1);
@@ -102,6 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       flipCardBack(card0);
       flipCardBack(card1);
+      updateMatches(matches);
     }
     cardsChosenId.splice(0, 2);
   };
@@ -119,10 +132,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const suffleCards = () => {
     cards.length = 0;
 
-    availableCards.forEach((card) => {
-      cards.push({...card, showText: false});
-      cards.push({...card, showText: true});
-    });
+    availableCards.sort(() => 0.5 - Math.random());
+
+    for(let i = 0; i < maxCardsToShow; i++) {
+      cards.push({ ...availableCards[i], showText: false });
+      cards.push({ ...availableCards[i], showText: true });
+    };
 
     cards.sort(() => 0.5 - Math.random());
   };
@@ -138,15 +153,19 @@ document.addEventListener("DOMContentLoaded", () => {
     commandsContainer.style.display = "none";
   };
 
-  document.getElementById("correctAnswer").addEventListener("click", () => checkIfCardsMatch(true));
-  document.getElementById("incorrectAnswer").addEventListener("click", () => checkIfCardsMatch(false));
+  document
+    .getElementById("correctAnswer")
+    .addEventListener("click", () => checkIfCardsMatch(true));
+  document
+    .getElementById("incorrectAnswer")
+    .addEventListener("click", () => checkIfCardsMatch(false));
   document.getElementById("restart").addEventListener("click", createBoard);
 
-  window.onclick = function(event) {
+  window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
     }
-  }
+  };
 
   createBoard();
 });
