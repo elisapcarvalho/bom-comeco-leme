@@ -9,23 +9,31 @@
     <title>Be Safe</title>
   </head>
   <body>
-    <!-- <div class="header">
-      <h1>MEMORY GAME - BE SAFE</h1>
-    </div> -->
     <div class="container">
-      <h2 id="result"></h2>
-      <div class="gameboard">
-        <div class="grid"></div>
-        <div class="commands">
-          <img src="images/heart.svg" alt="You found!!!" id="correctAnswer"/>
-          <img src="images/close.svg" alt="Try again!!!" id="incorrectAnswer"/>
+      <div class="header">
+        <h1>MEMORY GAME - SCHOOLBAG</h1>
+        <h3>TEACHER: ELISA PORTO DE CARVALHO</h3>
+      </div>
+      <div class="row">
+        <div class="col-8">
+          <h2 id="result"></h2>
+        </div>
+        <div class="col-4">
+          <div class="commands">
+            <img src="images/heart.svg" alt="You found!!!" id="correctAnswer" />
+            <img
+              src="images/close.svg"
+              alt="Try again!!!"
+              id="incorrectAnswer"
+            />
+          </div>
         </div>
       </div>
-      <button type="button" id="restart">START A NEW GAME</button>
+      <div class="grid"></div>
+      <div class="restart-container">
+        <button type="button" id="restart">START A NEW GAME</button>
+      </div>
     </div>
-    <!-- <div class="footer">
-      <p>TEACHER: ELISA PORTO DE CARVALHO</p>
-    </div> -->
     <script src="main.js"></script>
   </body>
 </html>

@@ -6,34 +6,36 @@
 }
 
 body {
-  font-size: 18px;
+  font-size: 10px;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
-.container {
-  display: flex;
-  height: 100vh;
-  width: 100vw;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
 h1 {
-  font-size: 2.4em;
+  font-size: 1.8em;
   color: #159957;
 }
 
 h2 {
+  font-size: 1.2em;
   color: #5e5e5e;
-  margin: 0.5em 0;
+  margin: 1em 0;
+}
+
+.container {
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
 }
 
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 56em;
+  width: 26em;
   margin: 1em;
 }
 
@@ -45,16 +47,15 @@ h2 {
 .commands {
   display: flex;
   justify-content: space-around;
-  margin-top: 1em;
 }
 
 .commands img {
-  height: 5em;
+  height: 4em;
   cursor: pointer;
 }
 
 img[class^="card"] {
-  max-width: 8em;
+  max-width: 6.5em;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -66,7 +67,7 @@ button {
   border: 0;
   border-radius: 8px;
   margin-top: 1em;
-  font-size: 1.8em;
+  font-size: 1.1em;
 }
 
 .card-found {
@@ -84,46 +85,43 @@ button {
   font-weight: 800;
 }
 
+.restart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .header {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  text-align: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin-top: 2em;
+  margin-bottom: 0.5em;
 }
 
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  text-align: right;
-}
-
-.footer p {
-  margin: 1em;
-  font-size: 1.2em;
-}
-
-@media (max-width: 640px)
-{
+@media (min-width: 577px) {
   body {
-    font-size: 12px;
+    font-size: 18px;
   }
 
-  .footer p {
-    margin: 1.5em;
-  }
-}
-
-@media (max-width: 360px)
-{
-  body {
-    font-size: 10px;
+  h1 {
+    font-size: 2em;
   }
 
-  .footer p {
-    margin: 1.8em;
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .header {
+    flex-direction: row;
+  }
+
+  .grid {
+    width: 56em;
+  }
+
+  img[class^="card"] {
+    max-width: 8em;
   }
 }
