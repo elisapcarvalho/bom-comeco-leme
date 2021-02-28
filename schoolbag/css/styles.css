@@ -24,6 +24,8 @@ button {
 h1 {
   font-size: 1.8em;
   color: #159957;
+  margin-top: 2em;
+  margin-bottom: 1em;
 }
 
 h2 {
@@ -138,6 +140,7 @@ img[class^="card"] {
 
   h1 {
     font-size: 2em;
+    margin: 0;
   }
 
   h2 {

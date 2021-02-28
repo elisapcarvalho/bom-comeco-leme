@@ -1,34 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const availableCards = [
-    {
-      name: "schoolbag",
-      text: "SCHOOLBAG",
-    },
-    {
-      name: "pen",
-      text: "PEN",
-    },
-    {
-      name: "eraser",
-      text: "ERASER",
-    },
-    {
-      name: "book",
-      text: "BOOK",
-    },
-    {
-      name: "pencil",
-      text: "PENCIL",
-    },
-    {
-      name: "pencil-case",
-      text: "PENCIL CASE",
-    },
-    {
-      name: "notebook",
-      text: "NOTEBOOK",
-    },
-  ];
+  const availableCards = ["schoolbag","pen","eraser","book","pencil","pencil-case","notebook"];
+  const cards = [];
+  const cardsChosenId = [];
+  const maxCardsToShow = 4;
 
   const sounds = {
     schoolbag: new Audio("sounds/schoolbag.mp3"),
@@ -41,9 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
     error: new Audio("sounds/error.mp3"),
   };
 
-  const maxCardsToShow = 4;
-  const cards = [];
-  const cardsChosenId = [];
   let matches = 0;
 
   const grid = document.querySelector(".grid");
@@ -135,8 +106,8 @@ document.addEventListener("DOMContentLoaded", () => {
     availableCards.sort(() => 0.5 - Math.random());
 
     for(let i = 0; i < maxCardsToShow; i++) {
-      cards.push({ ...availableCards[i], showText: false });
-      cards.push({ ...availableCards[i], showText: true });
+      cards.push({ name: availableCards[i], showText: false });
+      cards.push({ name: availableCards[i], showText: true });
     };
 
     cards.sort(() => 0.5 - Math.random());
