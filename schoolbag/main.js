@@ -39,13 +39,14 @@ document.addEventListener("DOMContentLoaded", () => {
     'pencil-case': new Audio('sounds/pencil-case.mp3'),
     'notebook': new Audio('sounds/notebook.mp3'),
   };
-
+  
   const cards = [];
   const cardsChosenId = [];
   let matches = 0;
 
   const grid = document.querySelector(".grid");
   const commandsContainer = document.querySelector(".commands");
+  const modal = document.getElementById("modal");
 
   function showCommands() {
     commandsContainer.style.display = "flex";
@@ -74,10 +75,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateMatches = (qty) => {
     matches = qty;
     if (matches === availableCards.length) {
-      document.getElementById("restart").style.display = "block";
 
-      document.getElementById("result").textContent = "GOOD JOB! YOU FOUND ALL PAIRS!";
-      document.getElementById("result").classList.add("good-job");
+      modal.style.display = "flex";
     } else {
       document.getElementById(
         "result"
@@ -94,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     commandsContainer.style.display = "none";
     grid.classList.remove("disabledDiv");
 
-    console.log(`${cardsChosenId[0]} - ${cardsChosenId[1]}`);
     const card0 = document.querySelector(`.card-${cardsChosenId[0]}`);
     const card1 = document.querySelector(`.card-${cardsChosenId[1]}`);
     if (isCorrect) {
@@ -130,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const createBoard = () => {
+    modal.style.display = "none";
     updateMatches(0);
     suffleCards();
     grid.querySelectorAll("*").forEach((n) => n.remove());
@@ -137,13 +136,17 @@ document.addEventListener("DOMContentLoaded", () => {
       grid.appendChild(createCard(i));
     }
     commandsContainer.style.display = "none";
-    document.getElementById("result").classList.remove("good-job");
-    document.getElementById("restart").style.display = "none";
   };
 
   document.getElementById("correctAnswer").addEventListener("click", () => checkIfCardsMatch(true));
   document.getElementById("incorrectAnswer").addEventListener("click", () => checkIfCardsMatch(false));
   document.getElementById("restart").addEventListener("click", createBoard);
+
+  window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
 
   createBoard();
 });

@@ -35,7 +35,7 @@ h2 {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 26em;
+  width: 32em;
   margin: 1em;
 }
 
@@ -55,7 +55,7 @@ h2 {
 }
 
 img[class^="card"] {
-  max-width: 6.5em;
+  max-width: 8em;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -67,7 +67,7 @@ button {
   border: 0;
   border-radius: 8px;
   margin-top: 1em;
-  font-size: 1.1em;
+  font-size: 1.5em;
 }
 
 .card-found {
@@ -124,4 +124,30 @@ button {
   img[class^="card"] {
     max-width: 8em;
   }
+}
+
+.modal {
+  align-items: center;
+  background-color: rgba(0,0,0,0.4); 
+  display: none; 
+  height: 100%; 
+  justify-content: center;
+  left: 0;
+  overflow: auto; 
+  position: fixed; 
+  top: 0;
+  width: 100%; 
+  z-index: 1; 
+}
+
+.modal-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;  
+  width: 80vw;
+}
+
+.modal-picture {
+  width: 100%;
+  max-width: 27em;
 }
