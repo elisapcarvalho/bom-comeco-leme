@@ -15,20 +15,6 @@ img {
   width: 100%;
 }
 
-.letters-container {
-  align-items: flex-end;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.letter {
-  border-bottom: 1px solid #666;
-  font-size: 2em;
-  margin-left: 0.5em;
-  min-width: 1em;
-}
-
 .alphabet-button {
   background: transparent;
   border-radius: 0.5em;
@@ -40,13 +26,18 @@ img {
   padding: 0.3em;
 }
 
+.correct-guess {
+  background: #359c35;
+  color: white;
+}
+
 .guess-used {
   cursor: not-allowed;
 }
 
-.correct-guess {
-  background: #359c35;
-  color: white;
+.header {
+  text-align: center;
+  margin: 1em auto;
 }
 
 .incorrect-guess {
@@ -54,16 +45,27 @@ img {
   color: white;
 }
 
-.result-text {
-    margin-top: 1em;
-    line-height: 1.5em;
+.letter {
+  border-bottom: 1px solid #666;
+  font-size: 2em;
+  margin-left: 0.5em;
+  min-height: 1.8em;
+  min-width: 1em;
+}
+
+.letters-container {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .restart-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1em;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 1em;
 }
 
 .restart-button {
@@ -74,4 +76,13 @@ img {
   border-radius: 8px;
   margin-top: 1em;
   font-size: 1.2em;
+}
+
+.result-text {
+  line-height: 1.5em;
+}
+
+.tip-picture {
+  display: flex;
+  align-items: center;
 }

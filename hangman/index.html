@@ -1,35 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/bootstrap-grid.min.css">
-    <link rel="stylesheet" href="css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Hangman</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container p-2">
-        <div class="row">
-            <div class="col-12 col-sm-6 col-md-4 order-1">
-                <img id="hangmanPicture" src="images/0.png" alt="hangman picture">
-            </div>
-            <div class="col-12 col-sm-6 col-md-3 order-2 tip-picture">
-                <img id="imageTip" src="" alt="Tip picture">
-            </div>
-            <div class="col-12 col-md-5 order-4 order-md-3 tips-container">
-                <ul id="tips" class="tips-list"></ul>
-                <h2 id="result" class="result-text"></h2>
-            </div>
-            <div class="col-12 order-3 order-md-4 letters-container">
-            </div>
-            <div class="col-12 order-5 alphabet-container">
-            </div>
+      <div class="row">
+        <div class="col-12 header">
+          <h1>HANGMAN</h1>
+          <h3>TEACHER: ELISA PORTO DE CARVALHO</h3>
         </div>
-        <div class="row restart-container">
-            <button type="button" id="restart" class="restart-button">Start a new game.</button>
+        <div class="col-6 col-sm-3 order-1">
+          <img id="hangmanPicture" src="images/0.png" alt="hangman picture" />
         </div>
+        <div class="col-6 col-sm-3 order-2 tip-picture">
+          <img id="imageTip" src="" alt="Tip picture" />
+        </div>
+        <div
+          class="col-12 col-sm-5 offset-sm-1 order-4 order-sm-3 mt-4 mt-sm-0 tips-container"
+        >
+          <ul id="tips" class="tips-list">
+          </ul>
+        </div>
+        <div class="col-12 order-3 order-sm-4 letters-container"></div>
+        <div id="restart-container" class="col-12 order-5 restart-container">
+          <h2 id="result" class="result-text"></h2>
+          <button type="button" id="restart" class="restart-button">
+            Start a new game.
+          </button>
+        </div>
+        <div id="alphabet-container" class="col-12 order-6 alphabet-container"></div>
+      </div>
     </div>
     <script src="js/main.js"></script>
-</body>
+  </body>
 </html>

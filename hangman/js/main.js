@@ -2,12 +2,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const MAX_ATTEMPTS = 9;
   const hangman = document.getElementById("hangmanPicture");
   const restartButton = document.getElementById("restart");
+  const restartContainer = document.getElementById("restart-container");
+  const alphabetContainer = document.getElementById("alphabet-container");
   const resultText = document.getElementById("result");
   const tipList = document.getElementById("tips");
   const imageTip = document.getElementById("imageTip");
 
   const secret = "turtle";
-  
+
   let lettersToFind;
   let correctGuess;
   let incorrectGuess;
@@ -31,9 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const createAlphateb = () => {
     const A = 65;
     const Z = 91;
-    const alphabetContainer = document.getElementsByClassName(
-      "alphabet-container"
-    )[0];
 
     alphabetContainer.innerHTML = "";
     for (let letter = A; letter < Z; letter++) {
@@ -76,38 +75,38 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const showTips = () => {
-      if (incorrectGuess == MAX_ATTEMPTS - 3) {
-          const tip1 = document.createElement('li');
-          tip1.innerHTML = 'Podemos encontrá-la tanto na àgua quanto na terra';
-          tipList.appendChild(tip1);
-          return;  
-      }
-      if (incorrectGuess == MAX_ATTEMPTS - 2) {
-        const tip2 = document.createElement('li');
-        tip2.innerHTML = 'Ela se movimenta bem devagar';
-        tipList.appendChild(tip2);
-        return;  
+    if (incorrectGuess == MAX_ATTEMPTS - 3) {
+      const tip1 = document.createElement("li");
+      tip1.innerHTML = "Podemos encontrá-la tanto na àgua quanto na terra";
+      tipList.appendChild(tip1);
+      return;
+    }
+    if (incorrectGuess == MAX_ATTEMPTS - 2) {
+      const tip2 = document.createElement("li");
+      tip2.innerHTML = "Ela se movimenta bem devagar";
+      tipList.appendChild(tip2);
+      return;
     }
     if (incorrectGuess == MAX_ATTEMPTS - 1) {
-        imageTip.src = 'images/turtle.png';
-        imageTip.style.display = 'block';
-        return;  
+      imageTip.src = "images/turtle.png";
+      imageTip.style.display = "block";
+      return;
     }
     return;
   };
 
   const checkIfGameFinished = () => {
-    if (correctGuess == lettersToFind) {
-      resultText.innerHTML = "Yeah!!! Congratulations!!!";
-      restartButton.style.display = 'block';
+    if (correctGuess < lettersToFind && incorrectGuess < MAX_ATTEMPTS) {
       return;
     }
 
-    if (incorrectGuess == MAX_ATTEMPTS) {
-        resultText.innerHTML = "Oh no!!! Try again!!!";
-        restartButton.style.display = 'block';
-        return;
-    }
+    resultText.innerHTML =
+      correctGuess == lettersToFind
+        ? "Yeah!!! Congratulations!!!"
+        : "Oh no!!! Try again!!!";
+
+    restartContainer.style.display = "flex";
+    alphabetContainer.style.display = "none";
 
     return;
   };
@@ -115,13 +114,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const clearTips = () => {
     tipList.innerHTML = "";
     imageTip.src = "";
-    imageTip.style.display = 'none';
+    imageTip.style.display = "none";
   };
 
   const createGame = () => {
-    restartButton.style.display = "none";
-    resultText.innerHTML = "";
     clearTips();
+    restartContainer.style.display = "none";
+    alphabetContainer.style.display = "block";
 
     correctGuess = 0;
     incorrectGuess = 0;
