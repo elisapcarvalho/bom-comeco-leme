@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 10px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 1em 2em;
+  border: 0;
+  border-radius: 8px;
+  margin-top: 1em;
+  font-size: 1.5em;
+}
+
+h1 {
+  font-size: 1.8em;
+  color: #159957;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+h2 {
+  font-size: 1.2em;
+  color: #5e5e5e;
+  margin: 1em 0;
+}
+
+img[class^="card"] {
+  max-width: 8em;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.card-found {
+  cursor: not-allowed;
+}
+
+.commands {
+  display: flex;
+  justify-content: space-around;
+}
+
+.commands img {
+  height: 4em;
+  cursor: pointer;
+}
+
+.container {
+  padding-right: 5px;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.disabledDiv {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.gameboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.good-job {
+  font-size: 1.8em;
+  color: #6060b1;
+  font-weight: 800;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 32em;
+  margin: 1em;
+}
+
+.header {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  width: 100%;
+}
+
+.modal {
+  align-items: center;
+  background-color: rgba(0,0,0,0.4); 
+  display: none; 
+  height: 100%; 
+  justify-content: center;
+  left: 0;
+  overflow: auto; 
+  position: fixed; 
+  top: 0;
+  width: 100%; 
+  z-index: 1; 
+}
+
+.modal-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;  
+  width: 80vw;
+}
+
+.modal-picture {
+  width: 100%;
+  max-width: 27em;
+}
+
+.restart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+  width: 100%;
+}
+
+@media (min-width: 577px) {
+  body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .header {
+    flex-direction: row;
+  }
+}
+
