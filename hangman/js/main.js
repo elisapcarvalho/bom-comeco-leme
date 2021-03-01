@@ -2,8 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const MAX_ATTEMPTS = 9;
   const hangman = document.getElementById("hangmanPicture");
   const restartButton = document.getElementById("restart");
-  // const restartContainer = document.getElementById("restart-container");
-  // const resultText = document.getElementById("result");
   const imageResult = document.getElementById("image-result");
   const alphabetContainer = document.getElementById("alphabet-container");
   const tipList = document.getElementById("tips");
@@ -20,6 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
       name: 'elephant',
       tip1: 'Ele é muito grande e tem ótima memória',
       tip2: 'Tem uma tromba muito grande'
+    },
+    {
+      name: 'parrot',
+      tip1: 'Todos piratas gostam de um',
+      tip2: 'Adora repetir o que falamos'
+    },
+    {
+      name: 'dog',
+      tip1: 'Gosta muito de brincar',
+      tip2: 'São os melhores amigos do homem'
+    },
+    {
+      name: 'whale',
+      tip1: 'Vivem no mar',
+      tip2: 'É um mamífero muito grande'
     },
   ];
 
@@ -131,17 +144,12 @@ document.addEventListener("DOMContentLoaded", () => {
       imageResult.src = "images/never-give-up.png";
       imageResult.attributes.alt = "Never give up!";
     }
-    // resultText.innerHTML =
-    //   correctGuess == lettersToFind
-    //     ? "Yeah!!! Congratulations!!!"
-    //     : "Oh no!!! Try again!!!";
 
     if (incorrectGuess == MAX_ATTEMPTS) {
       fillTheWordToDiscover();
     }
 
     modal.style.display = "flex";
-    // restartContainer.style.display = "flex";
     alphabetContainer.style.display = "none";
 
     return;
@@ -153,7 +161,7 @@ document.addEventListener("DOMContentLoaded", () => {
     imageTip.style.display = "none";
   };
 
-  const suffleOptions = () => {
+  const shuffleOptions = () => {
     words.sort(() => 0.5 - Math.random());
 
     const choice = words[0];
@@ -166,12 +174,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const createGame = () => {
     clearTips();
     modal.style.display = "none";
-    // restartContainer.style.display = "none";
     alphabetContainer.style.display = "block";
 
     correctGuess = 0;
     incorrectGuess = 0;
-    suffleOptions();
+    shuffleOptions();
     lettersToFind = secret.length;
     updateHangman();
     createLettersToDiscover();
