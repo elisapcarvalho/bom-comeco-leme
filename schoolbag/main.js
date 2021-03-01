@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return card;
   };
 
-  const suffleCards = () => {
+  const shuffleCards = () => {
     cards.length = 0;
 
     availableCards.sort(() => 0.5 - Math.random());
@@ -116,7 +116,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const createBoard = () => {
     modal.style.display = "none";
     updateMatches(0);
-    suffleCards();
+    shuffleCards();
     grid.querySelectorAll("*").forEach((n) => n.remove());
     for (let i = 0; i < cards.length; i++) {
       grid.appendChild(createCard(i));

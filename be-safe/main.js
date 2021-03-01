@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return card;
   };
 
-  const suffleCards = () => {
+  const shuffleCards = () => {
     cards.length = 0;
 
     availableCards.forEach((card) => {
@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const createBoard = () => {
     updateMatches(0);
-    suffleCards();
+    shuffleCards();
     grid.querySelectorAll("*").forEach((n) => n.remove());
     for (let i = 0; i < cards.length; i++) {
       grid.appendChild(createCard(i));
