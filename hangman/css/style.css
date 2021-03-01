@@ -23,7 +23,7 @@ h2 {
 }
 
 img {
-  width: 100%;
+  max-width: 100%;
 }
 
 .alphabet-button {
@@ -119,9 +119,14 @@ img {
   line-height: 1.5em;
 }
 
-.tip-picture {
+.tip-picture-container {
   display: flex;
   align-items: center;
+  justify-content: center;
+}
+
+.tip-picture {
+  max-height: 9em;
 }
 
 .tips-list {
