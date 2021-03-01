@@ -6,9 +6,20 @@
 }
 
 body {
-  font-size: 18px;
+  font-size: 14px;
   font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
+}
+
+h1 {
+  font-size: 1.8em;
+  color: #159957;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1em;
+  color: #5e5e5e;
 }
 
 img {
@@ -21,7 +32,7 @@ img {
   cursor: pointer;
   font-size: 1.5em;
   margin-right: 0.5em;
-  margin-top: 0.8em;
+  margin-top: 0.5em;
   min-width: 2em;
   padding: 0.3em;
 }
@@ -49,7 +60,7 @@ img {
   border-bottom: 1px solid #666;
   font-size: 2em;
   margin-left: 0.5em;
-  min-height: 1.8em;
+  min-height: 1.2em;
   min-width: 1em;
 }
 
@@ -58,6 +69,32 @@ img {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+.modal {
+  align-items: center;
+  background-color: rgba(0,0,0,0.4); 
+  display: none; 
+  height: 100%; 
+  justify-content: center;
+  left: 0;
+  overflow: auto; 
+  position: fixed; 
+  top: 0;
+  width: 100%; 
+  z-index: 1; 
+}
+
+.modal-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;  
+  width: 80vw;
+}
+
+.modal-picture {
+  width: 100%;
+  max-width: 27em;
 }
 
 .restart-container {
@@ -86,3 +123,36 @@ img {
   display: flex;
   align-items: center;
 }
+
+.tips-list {
+  margin-left: 1em;
+}
+
+@media (min-width: 577px) {
+  body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .grid {
+    width: 32em;
+    margin: 1em;
+  }
+
+  .header {
+    flex-direction: row;
+  }
+
+  .letter {
+    min-height: 1.7em;
+  }
+}
+

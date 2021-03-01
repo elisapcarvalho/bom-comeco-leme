@@ -9,7 +9,7 @@
     <title>Hangman</title>
   </head>
   <body>
-    <div class="container p-2">
+    <div class="container">
       <div class="row">
         <div class="col-12 header">
           <h1>HANGMAN</h1>
@@ -28,13 +28,21 @@
           </ul>
         </div>
         <div class="col-12 order-3 order-sm-4 letters-container"></div>
-        <div id="restart-container" class="col-12 order-5 restart-container">
+        <!-- <div id="restart-container" class="col-12 order-5 restart-container">
           <h2 id="result" class="result-text"></h2>
           <button type="button" id="restart" class="restart-button">
             Start a new game.
           </button>
-        </div>
+        </div> -->
         <div id="alphabet-container" class="col-12 order-6 alphabet-container"></div>
+      </div>
+    </div>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <img id="image-result" src="" alt="" class="modal-picture">
+        <div class="restart-container">
+          <button type="button" id="restart" class="restart-button">START A NEW GAME</button>
+        </div>
       </div>
     </div>
     <script src="js/main.js"></script>
