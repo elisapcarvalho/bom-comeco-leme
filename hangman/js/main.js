@@ -10,29 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const words = [
     {
-      name: 'turtle',
-      tip1: 'Podemos encontrá-la tanto na àgua quanto na terra',
-      tip2: 'Ela se movimenta bem devagar'
+      name: 'book',
+      tip1: 'Nos leva a lugares imaginários',
+      tip2: 'Podemos encontrar na biblioteca'
     },
     {
-      name: 'elephant',
-      tip1: 'Ele é muito grande e tem ótima memória',
-      tip2: 'Tem uma tromba muito grande'
+      name: 'pencil',
+      tip1: 'Com ele podemos criar histórias incríveis',
+      tip2: 'Usamos ele para escrever ou desenhar'
     },
     {
-      name: 'parrot',
-      tip1: 'Todos piratas gostam de um',
-      tip2: 'Adora repetir o que falamos'
+      name: 'eraser',
+      tip1: 'Encontramos em vários formatos e cores',
+      tip2: 'Apaga o que escrevemos errado'
     },
     {
-      name: 'dog',
-      tip1: 'Gosta muito de brincar',
-      tip2: 'São os melhores amigos do homem'
-    },
-    {
-      name: 'whale',
-      tip1: 'Vivem no mar',
-      tip2: 'É um mamífero muito grande'
+      name: 'schoolbag',
+      tip1: 'Local onde guardamos nossos objetos',
+      tip2: 'Pode ser carregada nas costas ou empurrada quando tem rodinhas'
     },
   ];
 
@@ -85,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const updateHangman = () => {
-    hangman.src = `images/${incorrectGuess}.png`;
+    hangman.src = `images/assets/${incorrectGuess}.png`;
   };
 
   const buttonClicked = (e) => {
@@ -119,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
     if (incorrectGuess == MAX_ATTEMPTS - 1) {
-      imageTip.src = `images/${secret}.png`;
+      imageTip.src = `images/tips/${secret}.png`;
       imageTip.style.display = "block";
       return;
     }
@@ -138,10 +133,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     if (correctGuess == lettersToFind) {
-      imageResult.src = "images/great-job.png";
+      imageResult.src = "images/assets/great-job.png";
       imageResult.attributes.alt = "Great Job!";
     } else {
-      imageResult.src = "images/never-give-up.png";
+      imageResult.src = "images/assets/never-give-up.png";
       imageResult.attributes.alt = "Never give up!";
     }
 
