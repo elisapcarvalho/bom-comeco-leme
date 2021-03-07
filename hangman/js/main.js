@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const tipList = document.getElementById("tips");
   const imageTip = document.getElementById("imageTip");
   const modal = document.getElementById("modal");
+  const old_secrets = [];
 
   const words = [
     {
@@ -157,8 +158,13 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const shuffleOptions = () => {
-    words.sort(() => 0.5 - Math.random());
-
+    do {
+      words.sort(() => 0.5 - Math.random());
+    } while(old_secrets.indexOf(words[0]) !== -1);
+    
+    old_secrets.shift();
+    old_secrets.push(words[0]);
+    
     const choice = words[0];
 
     secret = choice.name;
