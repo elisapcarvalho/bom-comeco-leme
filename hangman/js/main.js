@@ -12,13 +12,13 @@ document.addEventListener("DOMContentLoaded", () => {
   const words = [
     {
       name: 'book',
-      tip1: 'Nos leva a lugares imaginários',
+      tip1: 'Com ele vamos a lugares imaginários',
       tip2: 'Podemos encontrar na biblioteca'
     },
     {
       name: 'pencil',
       tip1: 'Com ele podemos criar histórias incríveis',
-      tip2: 'Usamos ele para escrever ou desenhar'
+      tip2: 'Usamos para escrever ou desenhar'
     },
     {
       name: 'eraser',
