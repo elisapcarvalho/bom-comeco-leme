@@ -53,11 +53,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updateMatches = (qty) => {
     matches = qty;
+    resultText.textContent = `YOU FOUND ${matches} PAIRS OF ${maxCardsToShow}`;
     if (matches === maxCardsToShow) {
       modal.style.display = "flex";
-    } else {
-      resultText.textContent = `YOU FOUND ${matches} PAIRS OF ${maxCardsToShow}`;
-    }
+    } 
   };
 
   const setCardOk = (card) => {
