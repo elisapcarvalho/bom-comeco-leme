@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const setCardOk = (card) => {
     const inner = document.createElement("img");
-    inner.setAttribute("src", "images/ok2.png");
+    inner.setAttribute("src", "images/ok.png");
     inner.className = "card-img";
     card.querySelectorAll("*").forEach((n) => n.remove());
     card.className = "card card-ok";
@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", () => {
     } else {
       const image = document.createElement("img");
       image.setAttribute("src", `images/${availableCards[chosenCard.id].image}`);
-      image.setAttribute("alt", `images/${availableCards[chosenCard.id].text}`);
+      image.setAttribute("alt", "Card image");
       image.className = "card-img";
       this.appendChild(image);
     }
