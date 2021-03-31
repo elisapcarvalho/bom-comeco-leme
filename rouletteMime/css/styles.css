@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 0.7em 1.5em;
+  border: 0;
+  border-radius: 8px;
+  font-size: 1.5em;
+}
+
+h1 {
+  font-size: 1.8em;
+  color: #159957;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+  color: #5e5e5e;
+  margin: 1em 0;
+}
+
+.container {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-areas: 
+     'title'
+     'subTitle'
+     'roulette'
+     'spinCommand'
+     'mimeText'
+     'mimeImage';
+  padding: 5px;
+  margin-top: 1em;
+}
+
+.title {
+  grid-area: title; 
+  align-self: center;
+  justify-self: center;
+}
+
+.subTitle {
+  grid-area: subTitle; 
+  align-self: center;
+  justify-self: center;
+}
+
+.roulette {
+  grid-area: roulette; 
+  align-self: center;
+  justify-self: center;
+}
+
+.spinCommand {
+  grid-area: spinCommand; 
+  align-self: center;
+  justify-self: center;
+}
+
+.mimeText {
+  grid-area: mimeText; 
+  align-self: center;
+  justify-self: center;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.mimeImage {
+  grid-area: mimeImage; 
+  align-self: center;
+  justify-self: center;
+}
+
+
+@media (min-width: 577px) {
+  body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .container {
+    grid-template-areas: 
+      'title subTitle'
+      'roulette mimeImage' 
+      'spinCommand mimeText';
+  }
+
+  .mimeText {
+    font-size: 2em;
+  }
+}
+
