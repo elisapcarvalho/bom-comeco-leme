@@ -56,6 +56,7 @@ const minSpinAngle = 0.12;
 
 const imageTag = document.getElementById('image');
 const selectedMimeText = document.getElementById('selectedMime');
+const spinButton = document.getElementById('spinButton');
 
 const canvas = document.getElementById('canvas');
 canvas.setAttribute('width', canvasSize);
@@ -79,6 +80,7 @@ const spinRoulette = () => {
     imageTag.removeAttribute('src');
     imageTag.removeAttribute('alt');
     selectedMimeText.innerHTML = '';
+    spinButton.style.display = 'none';
 
     spinStartAngle = Math.random() * 10 + 10;
     spinTimeTotal = (Math.random() * 5 + 5) * 1000;
@@ -110,6 +112,7 @@ const stopRotateWheel = () => {
     selectedMimeText.innerHTML = options[index].text;
     imageTag.setAttribute('src', options[index].image);
     imageTag.setAttribute('alt', options[index].text);
+    spinButton.style.display = 'block';
 }
 
 const drawRouletteWheel = () => {
@@ -164,7 +167,7 @@ const easeOut = (t, b, c, d) => {
 }
 
 if (canvas.getContext) {
-    document.getElementById('spinButton').addEventListener('click', spinRoulette);
+    spinButton.addEventListener('click', spinRoulette);
     ctx = canvas.getContext('2d');
     drawRouletteWheel();
 } else {
