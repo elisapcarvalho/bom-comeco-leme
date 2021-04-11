@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Hangman - FRUITS</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 header">
+          <h1>HANGMAN - FRUITS</h1>
+          <h3>TEACHER: ELISA PORTO DE CARVALHO</h3>
+        </div>
+        <div class="col-6 col-sm-3 order-1">
+          <img id="hangmanPicture" src="images/assets/0.png" alt="hangman picture" />
+        </div>
+        <div class="col-6 col-sm-3 order-2 tip-picture-container">
+          <img id="imageTip" class="tip-picture" src="" alt="Tip picture" />
+        </div>
+        <div
+          class="col-12 col-sm-5 offset-sm-1 order-4 order-sm-3 mt-4 mt-sm-0 tips-container"
+        >
+          <ul id="tips" class="tips-list">
+          </ul>
+        </div>
+        <div class="col-12 order-3 order-sm-4 letters-container"></div>
+        <div id="alphabet-container" class="col-12 order-6 alphabet-container"></div>
+      </div>
+    </div>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <img id="image-result" src="" alt="" class="modal-picture">
+        <div class="restart-container">
+          <button type="button" id="restart" class="restart-button">START A NEW GAME</button>
+        </div>
+      </div>
+    </div>
+    <script src="js/main.js"></script>
+  </body>
+</html>
