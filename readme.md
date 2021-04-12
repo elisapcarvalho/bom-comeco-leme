@@ -7,6 +7,7 @@ Nesta página listarei alguns jogos que foram desenvolvidos para auxiliar na fix
 - [Memory Game - Schoolbag](./schoolbag).  
 - [Memory Game - Water](./water).  
 - [Roulette Game - Mime](./rouletteMime).
+- [Roulette Game - Beach or Country?](./roulette-beach-country).
 
 Espero que seja divertido para o(a) aluno(a) e que ele(a) aprenda de forma lúdica. 
 
