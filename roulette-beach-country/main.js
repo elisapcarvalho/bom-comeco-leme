@@ -102,15 +102,15 @@ const options = [
 ];
 
 const animationInterval = 30;
-const imageSize = 120;
+const imageSize = 200;
 const maxNumberOfLoops = 10;
 const maxTimeToRollInSeconds = 7;
 const minTimeToRollInSeconds = 2;
-const quantityOfTipsToNotRepeat = 5;
+const quantityOfImagesToNotRepeat = Math.floor(options.length * .7);
 const quantityOfOptionsToAnswer = 4;
 const rouletteHeight = options.length * imageSize;
 
-const usedTips = [];
+const usedImages = [];
 const optionsToAnswer = [];
 
 let currentOption = 0;
@@ -118,6 +118,7 @@ let currentTimeout;
 
 const rollButton = document.getElementById("rollButton");
 const roulette = document.getElementById("roulette");
+const rouletteContainer = document.getElementById("roulette-container");
 const answersContainer = document.getElementById("answers-container");
 const answersOptions = document.getElementById("answers-options");
 const whereContainer = document.getElementById("where-container")
@@ -126,12 +127,12 @@ const whereOptions = document.getElementById("where-options");
 const getRandomOption = () => {
     const optionsQuantity = options.length;
     let sortedIndex = Math.floor(Math.random() * optionsQuantity);
-    while(usedTips.indexOf(sortedIndex) > -1) {
+    while(usedImages.indexOf(sortedIndex) > -1) {
         sortedIndex = Math.floor(Math.random() * optionsQuantity);
     }
-    const usedTipsLength = usedTips.push(sortedIndex);
-    if (usedTipsLength > quantityOfTipsToNotRepeat) {
-        usedTips.splice(0, 1);
+    const usedTipsLength = usedImages.push(sortedIndex);
+    if (usedTipsLength > quantityOfImagesToNotRepeat) {
+        usedImages.splice(0, 1);
     }
     return sortedIndex;
 };
@@ -166,7 +167,7 @@ const rollImages = (currentY, distanceRunned, distanceToRun, currentTime, totalT
 }
 
 const displayOptionsToAnswer = () => {
-    answersContainer.style.display = 'block';
+    answersContainer.style.display = 'grid';
     answersOptions.innerHTML = '';
     optionsToAnswer.sort(() => 0.5 - Math.random());
     optionsToAnswer.forEach(answer => {
@@ -268,5 +269,11 @@ const loadImages = () => {
     })
 }
 
+const adjustRouletteContainerSize = () => {
+    rouletteContainer.style.width = `${imageSize}px`;
+    rouletteContainer.style.height = `${imageSize}px`;
+}
+
+adjustRouletteContainerSize();
 loadImages();
 rollButton.addEventListener('click', roll);
