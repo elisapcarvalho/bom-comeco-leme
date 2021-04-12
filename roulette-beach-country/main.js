@@ -146,9 +146,10 @@ const calculateDistance = (stopIndex) => {
 }
 
 const slowdown = (current, distance, total) => {
-    const ts = (current /= total) * current;
-    const tc = ts * current;
-    return distance * (tc - (3 * ts) + (3 * current));
+    //using function easeOutQuart from https://easings.net/
+    const x = current / total;
+    const factor = 1 - Math.pow(1 - x, 4);
+    return distance * factor;
 }
 
 const rollImages = (currentY, distanceRunned, distanceToRun, currentTime, totalTime) => {
