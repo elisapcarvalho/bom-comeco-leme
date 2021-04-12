@@ -106,7 +106,7 @@ const imageSize = 200;
 const maxNumberOfLoops = 10;
 const maxTimeToRollInSeconds = 7;
 const minTimeToRollInSeconds = 2;
-const quantityOfImagesToNotRepeat = Math.floor(options.length * .7);
+const quantityOfImagesToNotRepeat = Math.floor(options.length * .95);
 const quantityOfOptionsToAnswer = 4;
 const rouletteHeight = options.length * imageSize;
 
@@ -155,7 +155,7 @@ const slowdown = (current, distance, total) => {
 const rollImages = (currentY, distanceRunned, distanceToRun, currentTime, totalTime) => {
     currentTime += animationInterval;
     const slowDownFactor = slowdown(currentTime, distanceToRun, totalTime);
-    if ((totalTime < currentTime) || ((distanceToRun - slowDownFactor) < 1)) {
+    if ((totalTime < currentTime) || ((distanceToRun - slowDownFactor) < 0.04)) {
         displayResult();
     } else {
         currentY = (currentY + (slowDownFactor - distanceRunned)) % rouletteHeight;
@@ -259,7 +259,9 @@ const roll = () => {
 };
 
 const loadImages = () => {
-    options.forEach(option => {
+    //have to add the first image at end to avoid a gap between the images when rolling
+    const imagesToLoad = [...options, options[0]];
+    imagesToLoad.forEach(option => {
         const image = document.createElement('img');
         image.src = `./images/${option.image}.jpg`;
         image.alt = option.name;
@@ -267,7 +269,7 @@ const loadImages = () => {
         image.height = imageSize;
         image.style.display = 'block';
         roulette.appendChild(image);
-    })
+    });
 }
 
 const adjustRouletteContainerSize = () => {
