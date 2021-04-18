@@ -70,6 +70,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const div = document.createElement("div");
       if (secret[i] === " ") {
         div.classList.add("space")
+        lettersToFind--;
       } else {
         div.classList.add("letter");
         const h2 = document.createElement("h2");
