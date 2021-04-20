@@ -15,9 +15,6 @@ const wall_velocity = 10;
 const bird_width = 34;
 const bird_height = 24;
 
-const board_width = 767;
-const board_height = 464;
-
 const frame_rate = 1000.0 / 10.0; //10 fps
 const steps_from_middle = 10;
 const height_increase = 20;
@@ -107,6 +104,7 @@ const options = [
 const quantityOfOptionsToAvoidRepeat = Math.floor(options.length * 0.9);
 const optionsUsed = [];
 
+let board_height, board_width;
 let optionDrawn;
 let bird_left;
 
@@ -275,6 +273,8 @@ const startGame = () => {
     startGameButton.style.visibility = 'hidden';
     wallsScore = 0;
     current_wall_velocity = wall_velocity;
+    board_width = screenGame.offsetWidth;
+    board_height = screenGame.offsetHeight;
 
     drawAnOption();
     createWall();
@@ -304,5 +304,9 @@ goUpButton.addEventListener('click', goUp);
 goDownButton.addEventListener('click', goDown);
 startGameButton.addEventListener('click', startGame);
 
+board_width = screenGame.offsetWidth;
+board_height = screenGame.offsetHeight;
+
 bird_left = 15;
+
 createPlayer();

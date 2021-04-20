@@ -36,8 +36,7 @@ h2 {
 
 #container {
   display: grid;
-  grid-template: "header" "instructions" "game" "commands" "score";
-  grid-gap: 0.5em;
+  grid-template: "header header" "instructions instructions" "game game" "score commands";
   height: 100%;
 }
 
@@ -49,7 +48,6 @@ h2 {
   justify-content: center;
   background: #283747;
   padding: 1em;
-  margin-bottom: 1em;
 }
 
 #header > h2 {
@@ -57,28 +55,26 @@ h2 {
 }
 
 #instructions {
+  display: none;
   grid-area: instructions;
   text-align: justify;
   white-space: normal;
   line-height: 1.2em;
   font-size: 1.2em;
-  padding: 0 1em;
+  padding: 1em;
 }
 
 #main-game {
   grid-area: game;
   position: relative;
-  width: 767px; /* Telas de tamanho médio */
-  max-width: 767px; /* Telas de tamanho médio */
-  height: 100%;
-  min-height: 525px;
-  justify-self: end;
+  width: 100vw;
+  height: 70vh;
 }
 
 #screen-game {
-  position: absolute;
+  position: relative;
   width: 100%;
-  height: 464px;
+  height: 80%;
   top: 0;
   background-image: url("../assets/sky.png");
   background-repeat: repeat-x;
@@ -109,10 +105,8 @@ h2 {
 }
 
 #footer-game {
-  position: absolute;
-  top: 464px;
   width: 100%;
-  height: calc(100% - 464px);
+  height: 20%;
   background-image: url("../assets/land.png");
   background-repeat: repeat-x;
   background-position: 0px 0px;
@@ -123,19 +117,20 @@ h2 {
   justify-content: center;
 }
 
-#opposite {
-  font-size: 1.4em;
+#opposites {
+  font-size: 1.1em;
 }
 
 #score {
   grid-area: score;
-  font-size: 2em;
+  font-size: 1em;
   color: #f3f3f3;
   background-color: #de354c;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 50vw;
 }
 
 #score button {
@@ -151,36 +146,31 @@ h2 {
   grid-area: commands;
   background-color: #3C1874;
   color: #f3f3f3;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-  justify-content: space-around;
+  width: 50vw;
 }
 
-#commands p {
+#text-command {
   text-align: justify;
   white-space: normal;
   line-height: 1.2em;
   font-size: 1.2em;
   padding: 0 1em;
+  display: none;
 }
 
 #buttonsCommand {
   display: flex;
-  align-items: center;
   justify-content: space-around;
-  width: 100%;
   margin: 1em 0;
 }
 
 #buttonsCommand button {
   background-color: transparent;
   color: #f3f3f3;
-  font-size: 1.3em;
   padding: 0.8em;
   border: 1px solid #f3f3f3;
   border-radius: 1em;
+  width: 45%;
 }
 
 #wall {
@@ -222,20 +212,59 @@ h2 {
     justify-content: space-between;
   }
 
+  #score {
+    font-size: 1.3em;
+  }
+
   #commands {
     padding: 1em;
+  }
+
+  #opposites {
+    font-size: 1.3em;
+  }
+
+  #text-command {
+    display: block;
   }
 }
 
 @media (min-width: 1020px) {
+  body {
+    font-size: 15px;
+  }
+
   #container {
     grid-template: "header header" "instructions instructions" "score game" "commands game";
   }
 
+  #instructions {
+    display: block;
+  }
+
   #score {
-    width: calc(100vw - 775px);
     font-size: 1.5em;
   }  
+
+  #main-game {
+    width: 70vw;
+    height: 78vh;
+  }
+
+  #score {
+    width: 30vw;
+  }
+
+  #commands {
+    width: 30vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+
+  #opposites {
+    font-size: 1.4em;
+  }
 
   #buttonsCommand {
     align-items: center;
@@ -253,7 +282,7 @@ h2 {
 
 @media (min-width: 1200px) {
   body {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   #score {
