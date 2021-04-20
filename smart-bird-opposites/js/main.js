@@ -200,7 +200,6 @@ const drawAnOption = () => {
 const createPlayer = () => {
     player.style.width = `${bird_width}px`;
     player.style.height = `${bird_height}px`;
-    bird_left = 15;
     player.style.left = `${bird_left}px`;
     height = (board_height - bird_height) / 2;
     player.style.top = `${height - (bird_height / 2)}px`;
@@ -305,4 +304,5 @@ goUpButton.addEventListener('click', goUp);
 goDownButton.addEventListener('click', goDown);
 startGameButton.addEventListener('click', startGame);
 
+bird_left = 15;
 createPlayer();
