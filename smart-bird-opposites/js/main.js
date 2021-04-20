@@ -3,6 +3,7 @@ const prize = document.getElementById('prize');
 const screenGame = document.getElementById('screen-game');
 const footerGame = document.getElementById('footer-game');
 const wallsOvercome = document.getElementById('walls-overcome');
+const startGameButton = document.getElementById('startGameButton');
 const goUpButton = document.getElementById('goUpButton');
 const goDownButton = document.getElementById('goDownButton');
 
@@ -108,7 +109,7 @@ const optionsUsed = [];
 let optionDrawn;
 let bird_left;
 
-let height = (board_height - bird_height) / 2;
+let height;
 let rotation = 0;
 
 let game_interval;
@@ -127,19 +128,6 @@ const goUp = () => {
     height -= height_increase;
     rotation -= 45;
 };
-
-document.addEventListener('keydown', e => {
-    if (e.key === 'ArrowDown' && (height + height_increase + bird_height < board_height)) {
-        goDownButton.click();
-    } else if (e.key === 'ArrowUp'&& (height - height_increase - (bird_height / 2) > 0)) {
-        goUpButton.click();
-    }
-   
-    return false;
-});
-
-goUpButton.addEventListener('click', goUp);
-goDownButton.addEventListener('click', goDown);
 
 const drawPlayer = () => {
     player.style.transform = `rotate(${rotation}deg)`;
@@ -212,6 +200,7 @@ const createPlayer = () => {
     player.style.width = `${bird_width}px`;
     player.style.height = `${bird_height}px`;
     player.style.left = `${bird_left}px`;
+    height = (board_height - bird_height) / 2;
     player.style.top = `${height - (bird_height / 2)}px`;
 };
 
@@ -276,9 +265,11 @@ const startAnimation = () => {
 const stopGame = () => {
     clearInterval(game_interval);
     stopAnimation();
+    startGameButton.style.visibility = 'visible';
 };
 
 const startGame = () => {
+    startGameButton.style.visibility = 'hidden';
     wallsScore = 0;
     current_wall_velocity = wall_velocity;
 
@@ -296,4 +287,18 @@ const startGame = () => {
     }, frame_rate);    
 };
 
-startGame();
+document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowDown' && (height + height_increase + bird_height < board_height)) {
+        goDownButton.click();
+    } else if (e.key === 'ArrowUp'&& (height - height_increase - (bird_height / 2) > 0)) {
+        goUpButton.click();
+    }
+   
+    return false;
+});
+
+goUpButton.addEventListener('click', goUp);
+goDownButton.addEventListener('click', goDown);
+startGameButton.addEventListener('click', startGame);
+
+createPlayer();
