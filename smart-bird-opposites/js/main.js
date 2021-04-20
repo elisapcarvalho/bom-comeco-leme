@@ -34,24 +34,20 @@ const colors = [
         color: "#f5f5f5"
     },
     {
-        background: "#001F3F",
-        color: "#e1e8ef"
+        background: "#001f3f",
+        color: "#f5f5f5"
     },
     {
         background: "#3e8c8c",
         color: "#f5f5f5"
     },
     {
-        background: "#3D9970",
-        color: "#163728"
-    },
-    {
         background: "#85144b",
-        color: "#f1eaee"
+        color: "#f5f5f5"
     },
     {
-        background: "#B10DC9",
-        color: "#efa9f9"
+        background: "#b10dc9",
+        color: "#f5f5f5"
     }
 ];
 
@@ -134,9 +130,9 @@ const goUp = () => {
 
 document.addEventListener('keydown', e => {
     if (e.key === 'ArrowDown' && (height + height_increase + bird_height < board_height)) {
-        goDown();
+        goDownButton.click();
     } else if (e.key === 'ArrowUp'&& (height - height_increase - (bird_height / 2) > 0)) {
-        goUp();
+        goUpButton.click();
     }
    
     return false;
