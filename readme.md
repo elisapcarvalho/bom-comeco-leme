@@ -7,6 +7,7 @@ Nesta página listarei alguns jogos que foram desenvolvidos para auxiliar na fix
 - [Memory Game - Numbers - One to Ten](./oneToTen).  
 - [Memory Game - Schoolbag](./schoolbag).  
 - [Memory Game - Water](./water).  
+- [Smart Bird Game - Opposites](./smart-bird-opposites)
 - [Roulette Game - Mime](./rouletteMime).
 - [Roulette Game - Beach or Country?](./roulette-beach-country).
 
