@@ -1,0 +1,187 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+  font-family: monospace;
+  font-size: 12px;
+  color: #fff;
+}
+
+#player
+{
+   position: absolute;
+   background-image: url('../assets/bird.png');   
+}
+
+#container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   height: 100%;
+    width: 100%;
+}
+
+#main-game {
+  position: relative;
+  width: 767px; /* Telas de tamanho médio */
+  max-width: 767px; /* Telas de tamanho médio */
+  height: 100%;
+  min-height: 525px;
+}
+
+#screen-game
+{
+   position: absolute;
+   width: 100%;
+   height: 464px;
+   top: 0;
+   background-image: url("../assets/sky.png");
+   background-repeat: repeat-x;
+   background-position: 0px 100%;
+   background-color: #4ec0ca;      
+}
+
+#prize-container {
+   position: absolute;
+   top: 0;
+   width: 100%;
+   display: flex;
+   justify-content: center;
+   z-index: 3;
+   text-align: center;
+}
+
+#prize {
+    text-align: center;
+    font-size: 2em;
+    margin: 0;
+    margin-block-start: 0.2em;
+    padding: 0.4em;
+    background: #3c3c3c1a;
+    border-radius: 0.3em;
+    text-transform: uppercase;
+}
+
+#footer-game
+{
+   position: absolute;
+   top: 464px;
+   width: 100%;
+   height: calc(100% - 464px);
+   background-image: url("../assets/land.png");
+   background-repeat: repeat-x;
+   background-position: 0px 0px;
+   background-color: #ded895;      
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+}
+
+#score {
+   text-align: center;
+   font-size: 1.5em;
+   color: #3c3c3c;
+}
+
+#commands {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#commands button {
+    border: 0;
+    background-color: transparent;
+    font-size: 2em;
+}
+
+#wall {
+    position: absolute;
+    top:0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    z-index: 2;
+}
+
+#wall > div {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 1.5em;
+   visibility: visible;
+   writing-mode: vertical-lr;
+   text-orientation: upright;
+   text-transform: uppercase;
+   padding: 0.3em;
+}
+
+@media(min-width: 800px) {
+    #commands {
+        display: none;
+    }
+
+    #main-game {
+       height: 600px;
+    }
+
+    #prize {
+       font-size: 3em;
+    }
+}
+
+@-webkit-keyframes animBird {
+    from { background-position: 0px 0px; }
+    to { background-position: 0px -96px; }
+ }
+ @-moz-keyframes animBird {
+    from { background-position: 0px 0px; }
+    to { background-position: 0px -96px; }
+ }
+ @-o-keyframes animBird {
+    from { background-position: 0px 0px; }
+    to { background-position: 0px -96px; }
+ }
+ @keyframes animBird {
+    from { background-position: 0px 0px; }
+    to { background-position: 0px -96px; }
+ }
+
+ @-webkit-keyframes animLand {
+    0% { background-position: 0px 0px; }
+    100% { background-position: -335px 0px; }
+ }
+ @-moz-keyframes animLand {
+    0% { background-position: 0px 0px; }
+    100% { background-position: -335px 0px; }
+ }
+ @-o-keyframes animLand {
+    0% { background-position: 0px 0px; }
+    100% { background-position: -335px 0px; }
+ }
+ @keyframes animLand {
+    0% { background-position: 0px 0px; }
+    100% { background-position: -335px 0px; }
+ }
+
+@-webkit-keyframes animSky {
+    0% { background-position: 0px 100%; }
+    100% { background-position: -275px 100%; }
+ }
+ @-moz-keyframes animSky {
+    0% { background-position: 0px 100%; }
+    100% { background-position: -275px 100%; }
+ }
+ @-o-keyframes animSky {
+    0% { background-position: 0px 100%; }
+    100% { background-position: -275px 100%; }
+ }
+ @keyframes animSky {
+    0% { background-position: 0px 100%; }
+    100% { background-position: -275px 100%; }
+ }
+ 
