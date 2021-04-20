@@ -39,7 +39,7 @@ h2 {
   color: #5e5e5e;
 }
 
-.text-selection-none{
+.text-selection-none {
   user-select: none; /* supported by Chrome and Opera */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -152,12 +152,15 @@ h2 {
 }
 
 #score button {
-  background-color: transparent;
-  color: #f3f3f3;
+  background-color: #ed7e8d;
+  color: #2e2e2e;
   padding: 0.5em;
-  border: 1px solid #f3f3f3;
+  border: 1px solid #ed7e8d;
   border-radius: 0.7em;
   margin-top: 1em;
+  box-shadow: 6px 6px 9px -4px #2e2e2ebf;
+  -webkit-box-shadow: 6px 6px 9px -4px #2e2e2ebf;
+  -moz-box-shadow: 6px 6px 9px -4px #2e2e2ebf;
 }
 
 #commands {
@@ -183,12 +186,15 @@ h2 {
 }
 
 #buttonsCommand button {
-  background-color: transparent;
+  background-color: #654d8a;
   color: #f3f3f3;
   padding: 0.8em;
-  border: 1px solid #f3f3f3;
+  border: 1px solid #654d8a;
   border-radius: 1em;
   width: 45%;
+  box-shadow: 6px 6px 9px -4px #f3f3f3bf;
+  -webkit-box-shadow: 6px 6px 9px -4px #f3f3f3bf;
+  -moz-box-shadow: 6px 6px 9px -4px #f3f3f3bf;
 }
 
 #wall {
