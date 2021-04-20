@@ -123,6 +123,10 @@ h2 {
   justify-content: center;
 }
 
+#opposite {
+  font-size: 1.4em;
+}
+
 #score {
   grid-area: score;
   font-size: 2em;

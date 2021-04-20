@@ -2,6 +2,7 @@ const player = document.getElementById('player');
 const prize = document.getElementById('prize');
 const screenGame = document.getElementById('screen-game');
 const footerGame = document.getElementById('footer-game');
+const oppositesResult = document.getElementById('opposites');
 const wallsOvercome = document.getElementById('walls-overcome');
 const startGameButton = document.getElementById('startGameButton');
 const goUpButton = document.getElementById('goUpButton');
@@ -225,6 +226,7 @@ const checkIfBirdIsAlive = () => {
     if (bird_left + bird_width === wall_left) {
         const wallHited = getWallHitedByPlayer();
         if (options[optionDrawn].opposite != wallOptions[wallHited]) {
+            oppositesResult.innerHTML = `${options[optionDrawn].word} é o oposto de ${options[optionDrawn].opposite}`
             stopGame();
         } else {
             const wallToHide = document.getElementById(`wall-${wallHited + 1}`);
@@ -269,6 +271,7 @@ const stopGame = () => {
 };
 
 const startGame = () => {
+    oppositesResult.innerHTML = '';
     startGameButton.style.visibility = 'hidden';
     wallsScore = 0;
     current_wall_velocity = wall_velocity;
