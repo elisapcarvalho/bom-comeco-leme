@@ -166,7 +166,15 @@ h2 {
   padding: 0 1em;
 }
 
-#commands button {
+#buttonsCommand {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1em 0;
+}
+
+#buttonsCommand button {
   background-color: transparent;
   color: #f3f3f3;
   font-size: 1.3em;
@@ -198,10 +206,6 @@ h2 {
 }
 
 @media (min-width: 800px) {
-  body {
-    font-size: 16px;
-  }
-
   h1 {
     font-size: 1.6em;
     margin-bottom: 0;
@@ -211,10 +215,6 @@ h2 {
     font-size: 1.3em;
   }
 
-  #container {
-    grid-template: "header header" "instructions instructions" "score game" "commands game";
-  }
-
   #header {
     display: flex;
     flex-direction: row;
@@ -222,8 +222,46 @@ h2 {
     justify-content: space-between;
   }
 
+  #commands {
+    padding: 1em;
+  }
+}
+
+@media (min-width: 1020px) {
+  #container {
+    grid-template: "header header" "instructions instructions" "score game" "commands game";
+  }
+
   #score {
     width: calc(100vw - 775px);
+    font-size: 1.5em;
+  }  
+
+  #buttonsCommand {
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0;
+    height: 100%;
+  }
+
+  #buttonsCommand button {
+    font-size: 1em;
+  }
+  
+}
+
+@media (min-width: 1200px) {
+  body {
+    font-size: 16px;
+  }
+
+  #score {
+    font-size: 2em;
+  }  
+
+  #buttonsCommand button {
+    font-size: 1.3em;
   }
 }
 
