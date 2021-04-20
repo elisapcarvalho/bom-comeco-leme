@@ -19,7 +19,7 @@
             <h2>Teacher: Elisa Porto de Carvalho</h2>
         </div>
         <div id="instructions">
-            <p>
+            <p class="text-selection-none">
                 O objetivo do jogo é fazer com que o pássaro atravesse o muro pela
                 palavra oposta daquela apresentada na tela. Quantas palavras você
                 consegue identificar sem deixar o pássaro bater no muro?
@@ -27,11 +27,11 @@
         </div>
         <main id="main-game">
             <section id="screen-game">
-                <div id="prize-container">
+                <div id="prize-container" class="text-selection-none">
                     <p id="prize"></p>
                 </div>
                 <div id="player" class="bird animated"></div>
-                <div id="wall"></div>
+                <div id="wall" class="text-selection-none"></div>
             </section>
             <section id="footer-game">
                 <p id="opposites"></p>
@@ -39,15 +39,15 @@
         </main>
         <div id="score">
             <p>Pontuação (Score): <span id="walls-overcome"></span></p>
-            <button type="button" id="startGameButton">Iniciar (Start)</button>
+            <button type="button" id="startGameButton" class="text-selection-none">Iniciar (Start)</button>
         </div>
         <div id="commands">
-            <p id="text-command">
+            <p id="text-command" class="text-selection-none">
                 Movimente o pássaro com as teclas de seta para cima e para baixo
             </p>
             <div id="buttonsCommand">
-                <button type="button" id="goUpButton">Para cima (Up)</button>
-                <button type="button" id="goDownButton">Para baixo (Down)</button>
+                <button type="button" id="goUpButton" class="text-selection-none">Para cima (Up)</button>
+                <button type="button" id="goDownButton" class="text-selection-none">Para baixo (Down)</button>
             </div>
         </div>
     </div>
