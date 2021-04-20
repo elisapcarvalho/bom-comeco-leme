@@ -11,7 +11,18 @@
 </head>
 
 <body>
+    <div id="header">
+        <h1>Smart Bird - Opposites</h1>
+        <h2>Teacher: Elisa Porto de Carvalho</h2>
+    </div>
     <div id="container">
+        <div id="instructions">
+            <p>
+                O objetivo desse jogo é você encontrar, entre as palavras apresentadas no muro que se aproxima do pássaro, qual é a
+                palavra que tem o significado oposto à palavra apresentada no alto. Quantas palavras você consegue identificar sem 
+                deixar o pássaro bater no muro?
+            </p>
+        </div>
         <main id="main-game">
             <section id="screen-game">
                 <div id="prize-container">
@@ -21,16 +32,17 @@
                 <div id="wall"></div>
             </section>
             <section id="footer-game">
-                <div id="commands">
-                    <button type="button" id="goUpButton">Up</button>
-                    <button type="button" id="goDownButton">Down</button>
-                </div>
-                <div id="score">
-                    <p>Pontuação (Score): <span id="walls-overcome"></span></p>                    
-                </div>
             </section>
         </main>
-    </div>
+        <div id="commands">
+            <p>Movimente o pássaro com as teclas de seta para cima e para baixo ou pressione os botões abaixo</p>
+            <button type="button" id="goUpButton">Para cima (Up)</button>
+            <button type="button" id="goDownButton">Para baixo (Down)</button>
+        </div>
+        <div id="score">
+            <p>Pontuação (Score): <span id="walls-overcome"></span></p>                    
+        </div>
+</div>
     <script src="js/main.js"></script>
 </body>
 

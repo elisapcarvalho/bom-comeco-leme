@@ -68,42 +68,42 @@ const options = [
         word: 'Healthy',
         opposite: 'Sick'
     },
-    // {
-    //     word: 'Rich',
-    //     opposite: 'Poor'
-    // },
-    // {
-    //     word: 'Good',
-    //     opposite: 'Bad'
-    // },
-    // {
-    //     word: 'Dirty',
-    //     opposite: 'Clean'
-    // },
-    // {
-    //     word: 'Cheap',
-    //     opposite: 'Expensive'
-    // },
-    // {
-    //     word: 'Empty',
-    //     opposite: 'Full'
-    // },
-    // {
-    //     word: 'Strong',
-    //     opposite: 'Weak'
-    // },
-    // {
-    //     word: 'Easy',
-    //     opposite: 'Difficult'
-    // },
-    // {
-    //     word: 'Hard',
-    //     opposite: 'Soft'
-    // },
-    // {
-    //     word: 'Near',
-    //     opposite: 'Far'
-    // },
+    {
+        word: 'Rich',
+        opposite: 'Poor'
+    },
+    {
+        word: 'Good',
+        opposite: 'Bad'
+    },
+    {
+        word: 'Dirty',
+        opposite: 'Clean'
+    },
+    {
+        word: 'Cheap',
+        opposite: 'Expensive'
+    },
+    {
+        word: 'Empty',
+        opposite: 'Full'
+    },
+    {
+        word: 'Strong',
+        opposite: 'Weak'
+    },
+    {
+        word: 'Easy',
+        opposite: 'Difficult'
+    },
+    {
+        word: 'Hard',
+        opposite: 'Soft'
+    },
+    {
+        word: 'Near',
+        opposite: 'Far'
+    },
 ];
 
 const quantityOfOptionsToAvoidRepeat = Math.floor(options.length * 0.9);
