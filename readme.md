@@ -2,10 +2,10 @@ Nesta página listarei alguns jogos que foram desenvolvidos para auxiliar na fix
 
 - [Hangman Game - Fruits](./hangman-fruits).
 - [Hangman Game - Schoolbag](./hangman-schoolbag).
-- [Memory Game - Be safe](./be-safe).  
-- [Memory Game - Family](./family).  
-- [Memory Game - Numbers - One to Ten](./oneToTen).  
-- [Memory Game - Schoolbag](./schoolbag).  
+- [Memory Game - Be safe](./memory-be-safe).  
+- [Memory Game - Family](./memory-family).  
+- [Memory Game - Numbers - One to Ten](./memory-one-to-ten).  
+- [Memory Game - Schoolbag](./memory-schoolbag).  
 - [Memory Game - Water](./water).  
 - [Smart Bird Game - Opposites](./smart-bird-opposites)
 - [Roulette Game - Mime](./rouletteMime).
