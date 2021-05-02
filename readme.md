@@ -11,6 +11,8 @@ Nesta página listarei alguns jogos que foram desenvolvidos para auxiliar na fix
 
 - [Smart Bird Game - Opposites](./smart-bird-opposites)
 
+- [Roulette Game - Animals](./roulette-animals).
+- [Roulette Game - Animals - Primeiro ano](./roulette-animals-primeiro-ano).
 - [Roulette Game - Beach or Country?](./roulette-beach-country).
 - [Roulette Game - Mime](./roulette-mime).
 - [Roulette Game - Opposites](./roulette-opposites).
