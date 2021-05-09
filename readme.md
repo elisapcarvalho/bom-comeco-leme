@@ -1,5 +1,7 @@
 Nesta página listarei alguns jogos que foram desenvolvidos para auxiliar na fixação das matérias ensinadas durante as aulas por mim ministradas na escola Bom Começo & Leme.  
 
+- [Workout](./workout)
+
 - [Hangman Game - Fruits](./hangman-fruits).
 - [Hangman Game - Schoolbag](./hangman-schoolbag).
 
