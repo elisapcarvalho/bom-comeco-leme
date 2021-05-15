@@ -2,21 +2,21 @@ document.addEventListener("DOMContentLoaded", () => {
   const availableCards = [
     {
       id: 0,
-      image: "teddy-bear.png",
+      image: "teddy-bear.jpg",
       text: "TEDDY BEAR",
       translate: "URSO DE PELÚCIA",
       sound: ""
     },
     {
       id: 1,
-      image: "kite.png",
+      image: "kite.jpg",
       text: "KITE",
       translate: "PIPA",
       sound: ""
     },
     {
       id: 2,
-      image: "skate.png",
+      image: "skate.jpg",
       text: "SKATEBOARD",
       translate: "SKATE",
       sound: ""
@@ -24,28 +24,28 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: 3,
-      image: "jump-rope.png",
+      image: "jump-rope.jpg",
       text: "JUMP ROPE",
       translate: "CORDA DE PULAR",
       sound: ""
     },
     {
       id: 4,
-      image: "video-game.png",
+      image: "video-game.jpg",
       text: "VIDEO GAME",
       translate: "VIDEO GAME",
       sound: ""
     },
     {
       id: 5,
-      image: "puzzle.png",
+      image: "puzzle.jpg",
       text: "PUZZLE",
       translate: "QUEBRA-CABEÇA",
       sound: ""
     },
     {
       id: 6,
-      image: "doll.png",
+      image: "doll.jpg",
       text: "DOLL",
       translate: "BONECA",
       sound: ""
@@ -53,21 +53,21 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     {
       id: 7,
-      image: "ball.png",
+      image: "ball.jpg",
       text: "BALL",
       translate: "BOLA",
       sound: ""
     },
     {
       id: 8,
-      image: "bike.png",
+      image: "bike.jpg",
       text: "BIKE",
       translate: "BICICLETA",
       sound: ""
     },
     {
       id: 9,
-      image: "car.png",
+      image: "car.jpg",
       text: "CAR",
       translate: "CARRO",
       sound: ""
