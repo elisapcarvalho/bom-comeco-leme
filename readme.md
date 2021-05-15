@@ -9,7 +9,8 @@ Nesta página listarei alguns jogos que foram desenvolvidos para auxiliar na fix
 - [Memory Game - Family](./memory-family).  
 - [Memory Game - Numbers - One to Ten](./memory-one-to-ten).  
 - [Memory Game - Schoolbag](./memory-schoolbag).  
-- [Memory Game - Water](./water).  
+- [Memory Game - Toys](./memory-toys). 
+- [Memory Game - Water](./memory-water).  
 
 - [Smart Bird Game - Opposites](./smart-bird-opposites)
 
