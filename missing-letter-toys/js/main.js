@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   const alphabetContainer = document.getElementById("alphabet-container");
-  const modal = document.getElementById("modal");
+  const resultContainer = document.getElementById("result-container");
   const optionsContainer = document.getElementById("options-container");
   const wordContainer = document.getElementById("word-container");
 
@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const target = e.target.tagName == "div" ? e.target.children[0] : e.target;
     target.innerHTML = missingLetter;
 
-    modal.style.display = "flex";
+    resultContainer.style.display = "flex";
     optionsContainer.style.display = "none";
   }
 
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const createGame = () => {
-    modal.style.display = "none";
+    resultContainer.style.display = "none";
     optionsContainer.style.display = "flex";
     const selectedOption = drawAnOption();
     showTheWordOfSelectedOption(selectedOption.name.toUpperCase());
