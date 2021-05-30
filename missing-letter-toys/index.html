@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="css/style.css">
+    <title>Missing letter</title>
+</head>
+
+<body>
+    <div class="header">
+        <h1>MISSING LETTER - TOYS</h1>
+        <h2>TEACHER: ELISA PORTO DE CARVALHO</h2>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div id="image-container" class="col-md-6 image-container">
+                <img id="image-tip" alt="Imagem da palavra que está sendo exibida para descobrir a letra faltante">
+            </div>
+            <div id="word-container" class="col-md-6 word-container"></div>
+        </div>
+        <div id="options-container" class="options-container">
+            <h3>Arraste a letra faltante para completar a palavra acima</h3>
+            <div id="alphabet-container" class="alphabet-container"></div>
+        </div>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+          <img src="images/great-job.png" alt="Imagem dando parabéns por ter acertado a resposta" class="modal-picture">
+          <div class="restart-container">
+            <button type="button" id="restart" class="restart-button">START A NEW GAME</button>
+          </div>
+        </div>
+      </div>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
