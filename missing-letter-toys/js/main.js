@@ -58,7 +58,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const dragStart = (e) => {
-    e.dataTransfer.setData("text/plain", e.target.id);
     selectedLetter = e.target.dataset.letter;
   };
 
@@ -73,10 +72,9 @@ document.addEventListener("DOMContentLoaded", () => {
     e.target.classList.remove("drag-over");
   }
 
-  const drop = (e) => {
+  const drop = e => {
     e.target.classList.remove("drag-over");
-    const id = e.dataTransfer.getData("text/plain");
-    const letter = document.getElementById(id);
+
     const target = e.target.tagName == "div" ? e.target.children[0] : e.target;
     target.innerHTML = missingLetter;
 
