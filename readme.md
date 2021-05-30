@@ -12,6 +12,8 @@ Nesta página listarei alguns jogos que foram desenvolvidos para auxiliar na fix
 - [Memory Game - Toys](./memory-toys). 
 - [Memory Game - Water](./memory-water).  
 
+- [Missing Letter - Toys](./missing-letter-toys).  
+
 - [Smart Bird Game - Opposites](./smart-bird-opposites)
 
 - [Roulette Game - Animals](./roulette-animals).
