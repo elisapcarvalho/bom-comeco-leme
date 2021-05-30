@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const drawAnOption = () => {
     if (sortedOptions.length == 0) {
-      sortedOptions = options.sort(() => Math.random() - 0.5);
+      sortedOptions = [...options.sort(() => Math.random() - 0.5)];
     }
 
     return sortedOptions.pop();
