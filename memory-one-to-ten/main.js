@@ -1,8 +1,60 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const availableCards = ["one","two","three","four","five","six","seven", "eight", "nine", "ten"];
+  const availableCards = [
+    {
+      id: 0,
+      text: "1",
+      sound: "one",
+    },
+    {
+      id: 1,
+      text: "2",
+      sound: "two",
+    },
+    {
+      id: 2,
+      text: "3",
+      sound: "three",
+    },
+    {
+      id: 3,
+      text: "4",
+      sound: "four",
+    },
+    {
+      id: 4,
+      text: "5",
+      sound: "five",
+    },
+    {
+      id: 5,
+      text: "6",
+      sound: "six",
+    },
+    {
+      id: 6,
+      text: "7",
+      sound: "seven",
+    },
+    {
+      id: 7,
+      text: "8",
+      sound: "eight",
+    },
+    {
+      id: 8,
+      text: "9",
+      sound: "nine",
+    },
+    {
+      id: 9,
+      text: "10",
+      sound: "ten",
+    }
+  ];
   const cards = [];
   const cardsChosenId = [];
-  const maxCardsToShow = 5;
+  const maxCardsToShow = 4;
+  const playCardSound = true;
 
   const sounds = {
     one: new Audio("sounds/one.mp3"),
@@ -30,30 +82,6 @@ document.addEventListener("DOMContentLoaded", () => {
     grid.classList.add("disabledDiv");
   }
 
-  function flipCard() {
-    this.removeEventListener("click", flipCard);
-
-    const cardId = this.getAttribute("data-id");
-    cardsChosenId.push(cardId);
-    this.setAttribute("alt", cards[cardId].name);
-    this.setAttribute(
-      "src",
-      cards[cardId].showText
-        ? `images/${cards[cardId].name}-text.png`
-        : `images/${cards[cardId].name}.png`
-    );
-    sounds[cards[cardId].name].play();
-    if (cardsChosenId.length === 2) {
-      setTimeout(showCommands(), 3500);
-    }
-  }
-
-  const flipCardBack = (card) => {
-    card.setAttribute("alt", "question");
-    card.setAttribute("src", "images/question.png");
-    card.addEventListener("click", flipCard);
-  };
-
   const updateMatches = (qty) => {
     matches = qty;
     resultText.textContent = `YOU FOUND ${matches} PAIRS OF ${maxCardsToShow}`;
@@ -63,15 +91,22 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const setCardOk = (card) => {
-    card.removeEventListener("click", flipCard);
-    card.setAttribute("src", "images/ok.png");
+    const inner = document.createElement("img");
+    inner.setAttribute("src", "images/ok.png");
+    inner.className = "card-img";
+    card.querySelectorAll("*").forEach((n) => n.remove());
+    card.className = "card card-ok";
+    card.appendChild(inner);
   };
 
   const checkIfCardsMatch = (isCorrect) => {
-    const card0 = document.querySelector(`.card-${cardsChosenId[0]}`);
-    const card1 = document.querySelector(`.card-${cardsChosenId[1]}`);
+    const card0 = document.querySelector(`div[data-id="${cardsChosenId[0].cardId}"]`);
+    const card1 = document.querySelector(`div[data-id="${cardsChosenId[1].cardId}"]`);
 
-    if (isCorrect && card0.alt !== card1.alt) {
+    const cardId0 = cardsChosenId[0].chosenCardId;
+    const cardId1 = cardsChosenId[1].chosenCardId;
+
+    if (isCorrect && cardId0  !== cardId1) {
       sounds["error"].play();
       resultText.textContent = "CHECK YOUR ANSWER!!!";
       return;
@@ -92,13 +127,48 @@ document.addEventListener("DOMContentLoaded", () => {
     cardsChosenId.splice(0, 2);
   };
 
+  function flipCard() {
+    this.removeEventListener("click", flipCard);
+
+    const cardId = this.getAttribute("data-id");
+    const chosenCard = cards[cardId];
+    cardsChosenId.push({cardId, chosenCardId: chosenCard.id});
+
+    this.querySelectorAll("*").forEach((n) => n.remove());
+    this.className = "card card-choosen"
+    const text = document.createElement("span");
+    text.innerHTML = availableCards[chosenCard.id].text;
+    text.className = "card-text";
+    this.appendChild(text);
+
+    if (playCardSound) {
+      sounds[availableCards[chosenCard.id].sound].play();
+    }
+
+    if (cardsChosenId.length === 2) {
+      setTimeout(showCommands(), 3500);
+    }
+  }
+
+  const flipCardBack = (card) => {
+    createQuestionCard(card);
+  };
+
+  const createQuestionCard = (div) => {
+    const inner = document.createElement("span");
+    const id = div.getAttribute("data-id");
+    inner.innerHTML = parseInt(id) + 1;
+    inner.className = "card-question-id";
+    div.querySelectorAll("*").forEach((n) => n.remove());
+    div.appendChild(inner);
+    div.className = "card card-question";
+    div.addEventListener("click", flipCard);
+  }
+
   const createCard = (id) => {
-    const card = document.createElement("img");
+    const card = document.createElement("div");
     card.setAttribute("data-id", id);
-    card.setAttribute("alt", "question");
-    card.setAttribute("src", "images/question.png");
-    card.classList.add(`card-${id}`);
-    card.addEventListener("click", flipCard);
+    createQuestionCard(card);
     return card;
   };
 
@@ -108,8 +178,8 @@ document.addEventListener("DOMContentLoaded", () => {
     availableCards.sort(() => 0.5 - Math.random());
 
     for(let i = 0; i < maxCardsToShow; i++) {
-      cards.push({ name: availableCards[i], showText: false });
-      cards.push({ name: availableCards[i], showText: true });
+      cards.push({ id: availableCards[i].id });
+      cards.push({ id: availableCards[i].id });
     };
 
     cards.sort(() => 0.5 - Math.random());
@@ -119,7 +189,10 @@ document.addEventListener("DOMContentLoaded", () => {
     modal.style.display = "none";
     updateMatches(0);
     shuffleCards();
-    grid.querySelectorAll("*").forEach((n) => n.remove());
+    grid.querySelectorAll("*").forEach((n) => {
+      n.removeEventListener("click", flipCard);
+      n.remove();
+    });
     for (let i = 0; i < cards.length; i++) {
       grid.appendChild(createCard(i));
     }

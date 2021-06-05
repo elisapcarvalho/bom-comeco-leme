@@ -33,66 +33,14 @@ h2 {
   margin: 1em 0;
 }
 
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
-  border-radius: 1em;
- width: 11em;
- height: 8em;
- display: flex;
- align-items: center;
- justify-content: center;
- flex-direction: column;
- margin-left: 1em;
- margin-bottom: 1em;
+img[class^="card"] {
+  max-width: 8em;
+  box-sizing: border-box;
+  cursor: pointer;
 }
 
-.card-choosen {
-  background-color: #fff;
-  padding: 0.5em;
-}
-
-.card-img {
-  height: 100%;
-  width: 100%;
-}
-
-.card-ok {
-  background-color: #bde5bd;
-  padding: 0.5em;
-}
-
-.card-ok .card-img {
-  height: 80%;
-  width: 80%;
-}
-
-.card-text {
-  color: #3f3f3f;
-  line-height: 1.5em;
-  font-size: 5em;
-  font-weight: bold;
-}
-
-.card-text-translated {
-  color: #7f7f7f;
-  font-size: 0.8em;
-  margin-top: 1em;
-}
 .card-found {
   cursor: not-allowed;
-}
-
-.card-question {
-  background-image: linear-gradient(#245fe9, #092669);
-  background-repeat: no-repeat;
-  background-size: auto;
-  padding: 1em;
-}
-
-.card-question-id {
-  font-size: 4em;
-  font-weight: bold;
-  color: #fff;
 }
 
 .commands {
@@ -132,7 +80,7 @@ h2 {
 .grid {
   display: flex;
   flex-wrap: wrap;
-  width: 26em;
+  width: 24em;
   margin: 0 1em;
 }
 
@@ -198,13 +146,8 @@ h2 {
     font-size: 1.5em;
   }
 
-  .card {
-    width: 12em;
-    height: 9em;   
-  }
-
   .grid {
-    width: 52em;
+    width: 40em;
     margin: 1em;
   }
 
