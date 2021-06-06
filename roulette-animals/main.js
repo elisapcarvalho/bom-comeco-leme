@@ -123,14 +123,16 @@ const displayOptionsToAnswer = () => {
     answersOptions.innerHTML = '';
     const optionsToAnswer = generateOptionsToAnswer();
     optionsToAnswer.forEach(answer => {
-        const button = document.createElement('button');
-        button.classList.add('answer-option');
-        button.innerHTML = "É ESSE ANIMAL?";
+        const button = document.createElement('input');
+        button.setAttribute('type', 'image');
+        button.setAttribute('src', './images/ok.png');
         button.value = options[answer].name;
-        button.style.cursor = "pointer";
-        button.addEventListener('click', function () {
+        button.setAttribute('alt', 'Clique se acredita que é esse animal');
+        button.classList.add('answer-button');
+        button.onclick = function (ev) {
             checkAnswer(this);
-        });
+        };
+
         const soundImage = document.createElement('input');
         soundImage.setAttribute('type', 'image');
         soundImage.setAttribute('src', './images/sound.jpg');
@@ -147,15 +149,15 @@ const displayOptionsToAnswer = () => {
 };
 
 const checkAnswer = (answer) => {
+    console.log(answer.value);
     if (answer.value === options[currentOption].name) {
         answer.classList.add('correct-answer');
-        answer.innerHTML = 'PARABÉNS!';
         rollButton.style.display = 'block';
     } else {
         answer.parentNode.disabled = true;
         answer.parentNode.childNodes.forEach(node => node.style.cursor = 'not-allowed'); 
         answer.classList.add('incorrect-answer');
-        answer.innerHTML = 'NÃO É ESSE!';
+        answer.setAttribute('src', './images/notOk.png');
     }
 };
 
