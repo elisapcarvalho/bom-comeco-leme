@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  height: 100vh;
+  width: 100vw;
+  background-image: url('../images/festa-junina.jpg');
+  background-repeat: no-repeat;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center;
+}
+
+button {
+  background-color: blue;
+  color: white;
+  padding: 1em 2em;
+  border: 0;
+  border-radius: 8px;
+  margin-top: 1em;
+  font-size: 1.5em;
+}
+
+h1 {
+  font-size: 1.8em;
+  color: #f1faf5;
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 1.2em;
+  color: #fafafa;
+  margin: 1em 0;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); 
+  border-radius: 1em;
+ width: 11em;
+ height: 8em;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ flex-direction: column;
+ margin-left: 1em;
+ margin-bottom: 1em;
+}
+
+.card-choosen {
+  background-color: #fff;
+  padding: 0.5em;
+}
+
+.card-img {
+  height: 100%;
+  width: 100%;
+}
+
+.card-ok {
+  background-color: #bde5bd;
+  padding: 0.5em;
+}
+
+.card-ok .card-img {
+  height: 80%;
+  width: 80%;
+}
+
+.card-text {
+  color: #3f3f3f;
+  line-height: 1.5em;
+  font-size: 5em;
+  font-weight: bold;
+}
+
+.card-text-translated {
+  color: #7f7f7f;
+  font-size: 0.8em;
+  margin-top: 1em;
+}
+.card-found {
+  cursor: not-allowed;
+}
+
+.card-question {
+  background-image: linear-gradient(#245fe9, #092669);
+  background-repeat: no-repeat;
+  background-size: auto;
+  padding: 1em;
+}
+
+.card-question-id {
+  font-size: 4em;
+  font-weight: bold;
+  color: #fff;
+}
+
+.commands {
+  display: flex;
+  justify-content: space-around;
+}
+
+.commands img {
+  height: 4em;
+  cursor: pointer;
+}
+
+.container {
+  padding-right: 5px;
+  padding-left: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.disabledDiv {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+.gameboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.good-job {
+  font-size: 1.8em;
+  color: #6060b1;
+  font-weight: 800;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  width: 26em;
+  margin: 0 1em;
+}
+
+.header {
+  align-items: center;
+  background-color: #00000050;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 0.5em;
+  padding: 0 0.5em;
+  width: 100%;
+}
+
+.modal {
+  align-items: center;
+  background-color: rgba(0,0,0,0.4); 
+  display: none; 
+  height: 100%; 
+  justify-content: center;
+  left: 0;
+  overflow: auto; 
+  position: fixed; 
+  top: 0;
+  width: 100%; 
+  z-index: 1; 
+}
+
+.modal-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;  
+  width: 80vw;
+}
+
+.modal-picture {
+  width: 100%;
+  max-width: 27em;
+}
+
+.restart-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+  width: 100%;
+}
+
+@media (min-width: 577px) {
+  body {
+    font-size: 18px;
+  }
+
+  h1 {
+    font-size: 2em;
+    margin: 0;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .card {
+    width: 12em;
+    height: 9em;   
+  }
+
+  .grid {
+    width: 52em;
+    margin: 1em;
+  }
+
+  .header {
+    flex-direction: row;
+  }
+}
+
