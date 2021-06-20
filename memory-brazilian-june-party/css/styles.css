@@ -31,7 +31,6 @@ button {
 h1 {
   font-size: 1.8em;
   color: #f1faf5;
-  margin-bottom: 0.5em;
 }
 
 h2 {
@@ -154,6 +153,10 @@ h2 {
   width: 100%;
 }
 
+.header h1 {
+  margin-top: 0.5em;
+}
+
 .modal {
   align-items: center;
   background-color: rgba(0,0,0,0.4); 
@@ -193,8 +196,21 @@ h2 {
 }
 
 @media (min-width: 577px) {
+  .card {
+    width: 12em;
+    height: 9em;   
+  }
+
+  .grid {
+    width: 52em;
+    margin: 1em;
+  }
+
+}
+
+@media (min-width: 960px) {
   body {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   h1 {
@@ -206,18 +222,16 @@ h2 {
     font-size: 1.5em;
   }
 
-  .card {
-    width: 12em;
-    height: 9em;   
-  }
-
-  .grid {
-    width: 52em;
-    margin: 1em;
-  }
-
   .header {
     flex-direction: row;
+  }
+
+  .header h1 {
+    margin: 0.5em 0;
+  }
+
+  .header h2 {
+    margin: 0
   }
 }
 
