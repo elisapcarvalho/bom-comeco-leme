@@ -6,6 +6,7 @@ Nesta página listarei alguns jogos que foram desenvolvidos para auxiliar na fix
 - [Hangman Game - Schoolbag](./hangman-schoolbag).
 
 - [Memory Game - Be safe](./memory-be-safe).  
+- [Memory Game - Brazilian June Party](./meory-brazilian-june-party).  
 - [Memory Game - Family](./memory-family).  
 - [Memory Game - Numbers - One to Ten](./memory-one-to-ten).  
 - [Memory Game - Schoolbag](./memory-schoolbag).  
