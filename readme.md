@@ -10,6 +10,7 @@ Nesta página listarei alguns jogos que foram desenvolvidos para auxiliar na fix
 - [Memory Game - Brazilian June Party](./memory-brazilian-june-party).  
 - [Memory Game - Family](./memory-family).  
 - [Memory Game - Numbers - One to Ten](./memory-one-to-ten).  
+- [Memory Game - Picnic](./memory-picnic).  
 - [Memory Game - Schoolbag](./memory-schoolbag).  
 - [Memory Game - Toys](./memory-toys). 
 - [Memory Game - Water](./memory-water).  
