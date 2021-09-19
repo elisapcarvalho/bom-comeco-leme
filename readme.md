@@ -13,6 +13,7 @@ Nesta página listarei alguns jogos que foram desenvolvidos para auxiliar na fix
 - [Memory Game - Picnic](./memory-picnic).  
 - [Memory Game - Schoolbag](./memory-schoolbag).  
 - [Memory Game - Toys](./memory-toys). 
+- [Memory Game - Toys - Educação infantil](./memory-toys-infantil). 
 - [Memory Game - Water](./memory-water).  
 
 - [Missing Letter - Toys](./missing-letter-toys).  
