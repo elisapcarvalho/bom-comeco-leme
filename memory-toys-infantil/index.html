@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="icon" href="images/cropped-nova_logo-1-32x32.png" sizes="32x32">
+    <link rel="icon" href="images/cropped-nova_logo-1-192x192.png" sizes="192x192">
+    <title>TOYS</title>
+  </head>
+  <body>
+    <div class="header">
+      <h1>TOYS - MEMORY GAME</h1>
+      <h3>TEACHER: ELISA PORTO DE CARVALHO</h3>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-sm-8 mb-2 mb-sm-0">
+          <h2 id="result"></h2>
+        </div>
+        <div class="col-12 col-sm-4 mb-2 mb-sm-0">
+          <div class="commands">
+            <img src="images/heart.svg" alt="You found!!!" id="correctAnswer" />
+            <img
+              src="images/close.svg"
+              alt="Try again!!!"
+              id="incorrectAnswer"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="grid"></div>
+    </div>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <img src="images/great-job.png" alt="Great Job!" class="modal-picture">
+        <div class="restart-container">
+          <button type="button" id="restart">START A NEW GAME</button>
+        </div>
+      </div>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
